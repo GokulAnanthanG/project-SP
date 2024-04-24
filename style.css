@@ -351,25 +351,25 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#08072b",endCo
         word-spacing: -2px;
         color: rgba(255, 255, 255, 0.647);
       }
-.Achivement .col-md-3{
+      .Achivement .col-md-3{
         margin: auto;
       }
-
       .shortBox{
         display: flex;
         justify-content: space-evenly;
         align-items: center;
         height:200px;
+        background: rgb(13,6,6);
+        background: -moz-linear-gradient(148deg, rgba(13,6,6,1) 0%, rgba(79,15,79,1) 51%, rgba(19,28,92,1) 100%);
+        background: -webkit-linear-gradient(148deg, rgba(13,6,6,1) 0%, rgba(79,15,79,1) 51%, rgba(19,28,92,1) 100%);
+        background: linear-gradient(148deg, rgba(13,6,6,1) 0%, rgba(79,15,79,1) 51%, rgba(19,28,92,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d0606",endColorstr="#131c5c",GradientType=1);
         @media only screen and (max-width: 768px) {
              flex-direction: column;
              padding: 20px;
              border-radius: 6px;
         }
-    background: rgb(13,6,6);
-background: -moz-linear-gradient(148deg, rgba(13,6,6,1) 0%, rgba(79,15,79,1) 51%, rgba(19,28,92,1) 100%);
-background: -webkit-linear-gradient(148deg, rgba(13,6,6,1) 0%, rgba(79,15,79,1) 51%, rgba(19,28,92,1) 100%);
-background: linear-gradient(148deg, rgba(13,6,6,1) 0%, rgba(79,15,79,1) 51%, rgba(19,28,92,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d0606",endColorstr="#131c5c",GradientType=1);
+   
     }  
       .shortBox .box img{
         position: relative;
@@ -390,4 +390,20 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d0606",endCo
       }
       .shortBox h3{
         cursor: pointer;
+      }
+     
+      footer .col-lg-4:first-child{
+        opacity: 0.6;
+      }
+      footer a{
+        color: #555;
+        text-decoration: none;
+        font-size: 26px;
+      }
+      footer .col-lg-4:last-child{
+        opacity: 0.6;
+      }
+      footer .col-lg-4:last-child a{
+        font-size: 16px;
+        text-decoration: underline;
       }
