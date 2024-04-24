@@ -351,6 +351,9 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#08072b",endCo
         word-spacing: -2px;
         color: rgba(255, 255, 255, 0.647);
       }
+.Achivement .col-md-3{
+        margin: auto;
+      }
 
       .shortBox{
         display: flex;
