@@ -140,8 +140,9 @@ object-fit: cover;
     color: white;
     @media only screen and (max-width: 768px) {
         width: 300px;
-    height: 200px;
-    margin-top: auto !important;
+        height: 200px;
+        margin: auto;
+        margin-top: auto !important;
     }
  }
  .award .img-box h5{
