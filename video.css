@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Francois+One&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); /*pop*/
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');/* award font*/
+ 
+body {
+    scrollbar-width: thin; /* "auto" or "thin" */
+    scrollbar-color: #888 #f1f1f1; /* thumb and track color */
+}
+
+/* WebKit */
+::-webkit-scrollbar {
+    width: 8px;
+ }
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+body{
+    background: rgb(8,7,43);
+background: -moz-linear-gradient(148deg, rgba(8,7,43,1) 0%, rgba(10,12,41,1) 37%, rgba(54,7,15,1) 100%);
+background: -webkit-linear-gradient(148deg, rgba(8,7,43,1) 0%, rgba(10,12,41,1) 37%, rgba(54,7,15,1) 100%);
+background: linear-gradient(148deg, rgba(8,7,43,1) 0%, rgba(10,12,41,1) 37%, rgba(54,7,15,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#08072b",endColorstr="#36070f",GradientType=1);
+background-repeat: no-repeat;
+min-height: 100vh;
+}
+ 
+.navbar{
+    background-color: transparent !important;
+}
+.navbar-brand{
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: gold !important;
+    @media only screen and (max-width: 768px) {
+        font-size: 15px !important;
+    }
+}
+.navbar-toggler-icon {    
+    color: white !important;
+    background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28 255, 255, 255,1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")!important;
+}
+.navbar-nav .nav-link{
+    font-family: "Francois One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.929) !important;
+}
+ 
+footer .col-lg-4:first-child{
+    opacity: 0.9;
+    color: #c7acac !important;
+  }
+  footer a{
+    color: #c7acac !important;
+    text-decoration: none;
+    font-size: 26px;
+  }
+  footer .col-lg-4:last-child{
+    opacity: 0.9;
+    color: #c7acac !important;
+  }
+  footer .col-lg-4:last-child a{
+    font-size: 16px;
+    text-decoration: underline;
+  }
+  main{
+    min-height: 500px;
+  }
+  .box{
+    width: 100%;
+    height:200px;
+    border-radius: 6px;
+    background: rgb(13,6,6);
+    background: -moz-linear-gradient(148deg, rgba(13,6,6,1) 0%, rgba(79,15,79,1) 51%, rgba(19,28,92,1) 100%);
+    background: -webkit-linear-gradient(148deg, rgba(13,6,6,1) 0%, rgba(79,15,79,1) 51%, rgba(19,28,92,1) 100%);
+    background: linear-gradient(148deg, rgba(13,6,6,1) 0%, rgba(79,15,79,1) 51%, rgba(19,28,92,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d0606",endColorstr="#131c5c",GradientType=1);
+    @media only screen and (max-width: 768px) {
+    height: 100px;
+  }
+}
+.card iframe{
+    @media only screen and (max-width: 768px) {
+        width:287px;
+      }
+} 
+.links a{
+    text-decoration: none;
+    font-family: "Francois One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.929) !important;
+}
+.active{
+    border-radius: 8px;
+    padding: 8px;
+    border: 3px solid white;
+}
+.title{
+    white-space: nowrap;        
+    overflow: hidden;           
+    text-overflow: ellipsis;    
+    max-width: 400px;      
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+     font-style: normal;  
+     font-size: 18px;
+     color: rgba(255, 255, 255, 0.723);
+     margin-top: 5px;
+     
+     @media only screen and (max-width: 768px) {
+        max-width: 300px; 
+        white-space:wrap;   
+        overflow: none;       
+        text-overflow: none;    
+        text-align: center;
+    } 
+   }
+   .video-container{
+    width: 350px;
+    padding: 5px;
+    margin: auto;
+   }
