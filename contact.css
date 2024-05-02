@@ -74,76 +74,65 @@ footer .col-lg-4:first-child{
     font-size: 16px;
     text-decoration: underline;
   }
-  main{
-    min-height: 500px;
-  }
-  main .flex img{
-    width: 300px;
-    height: 240px;
-    float: right;
-    object-fit: cover;
-   }
-   .flex{
-    width: 1000px;
-    margin: auto;
+
+.shortBox{
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-evenly;
     align-items: center;
+    height:200px;
+    background: rgb(13,6,6);
+    background: -moz-linear-gradient(148deg, rgba(13,6,6,1) 0%, rgba(79,15,79,1) 51%, rgba(19,28,92,1) 100%);
+    background: -webkit-linear-gradient(148deg, rgba(13,6,6,1) 0%, rgba(79,15,79,1) 51%, rgba(19,28,92,1) 100%);
+    background: linear-gradient(148deg, rgba(13,6,6,1) 0%, rgba(79,15,79,1) 51%, rgba(19,28,92,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d0606",endColorstr="#131c5c",GradientType=1);
+    @media only screen and (max-width: 768px) {
+         flex-direction: column;
+         padding: 20px;
+         border-radius: 6px;
+    }
+
+}  
+  .shortBox .box img{
+    position: relative;
+    top: -80px;
+    height: 250px;
+  }
+  .shortBox .imgBox{
+    @media only screen and (max-width: 768px) {
+        display: none;
+    }
+  }
+  .shortBox h2, .shortBox h3{
+    font-family: "Anton", sans-serif;
+    color: white;
+  }
+  .shortBox p{
+    font-family: "Francois One", sans-serif;
+  }
+  .shortBox p{
+    color:rgba(255, 255, 255, 0.748);
+  }
+  .conatctOptions{
+    width: 600px;
+    margin: auto;
     color: white;
     @media only screen and (max-width: 768px) {
-        flex-direction: column;
         width: auto;
     }
-   }
-    .box{
-    width: 450px;
-    @media only screen and (max-width: 768px) {
-        width: auto;
-
-    }
-   }
-   .box1{
-    width: 310px;
-    @media only screen and (max-width: 768px) {
-        width: auto;
-    }
-   }
-   .box2{
-    border-right: 3px solid white;
-    padding: 10px;
-   }
-   .box p{
-     font-family: Poppins;
-        height:145px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 6; /* Number of lines to show */
-            -webkit-box-orient: vertical;
-            height: calc(1.5 * 4); /* Line height * Number of lines */
-            line-height: 1.5; /* Line height */    
-            @media only screen and (max-width: 768px) {
-                font-size: 16px;
-                padding: 5px;
-                height:150px;
-                word-spacing: -1px;
-            } 
-   }
-   .box h5{
-    white-space: nowrap;        
-    overflow: hidden;           
-    text-overflow: ellipsis;    
-    max-width: 400px;      
+}
+  .conatctOptions .icons i{
+    font-size: 30px;
+    color: rgb(103, 68, 99);
+  }
+ .sendMsg{
+    color: rgb(88, 29, 104);
+    font-family: "Francois One", sans-serif;
+ }  
+.right label{
+    color: rgba(255, 255, 255, 0.734);
     font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
-     font-style: normal;  
-     
-     @media only screen and (max-width: 768px) {
-        max-width: 300px; 
-        white-space:wrap;   
-        overflow: none;       
-        text-overflow: none;    
-        text-align: center;
-    } 
-   }
+  font-optical-sizing: auto;
+  }
+  .form-control{
+    background-color:rgba(255, 255, 255, 0.868)!important;
+  }

@@ -74,76 +74,17 @@ footer .col-lg-4:first-child{
     font-size: 16px;
     text-decoration: underline;
   }
-  main{
-    min-height: 500px;
+  .col-lg-3 p{
+      height:50px;
+     font-size: 15px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Number of lines to show */
+        -webkit-box-orient: vertical;
+        height: calc(1.5 * 4); /* Line height * Number of lines */
+        line-height: 1.5; /* Line height */    
   }
-  main .flex img{
-    width: 300px;
-    height: 240px;
-    float: right;
-    object-fit: cover;
-   }
-   .flex{
-    width: 1000px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    align-items: center;
-    color: white;
-    @media only screen and (max-width: 768px) {
-        flex-direction: column;
-        width: auto;
-    }
-   }
-    .box{
-    width: 450px;
-    @media only screen and (max-width: 768px) {
-        width: auto;
 
-    }
-   }
-   .box1{
-    width: 310px;
-    @media only screen and (max-width: 768px) {
-        width: auto;
-    }
-   }
-   .box2{
-    border-right: 3px solid white;
-    padding: 10px;
-   }
-   .box p{
-     font-family: Poppins;
-        height:145px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 6; /* Number of lines to show */
-            -webkit-box-orient: vertical;
-            height: calc(1.5 * 4); /* Line height * Number of lines */
-            line-height: 1.5; /* Line height */    
-            @media only screen and (max-width: 768px) {
-                font-size: 16px;
-                padding: 5px;
-                height:150px;
-                word-spacing: -1px;
-            } 
-   }
-   .box h5{
-    white-space: nowrap;        
-    overflow: hidden;           
-    text-overflow: ellipsis;    
-    max-width: 400px;      
-    font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
-     font-style: normal;  
-     
-     @media only screen and (max-width: 768px) {
-        max-width: 300px; 
-        white-space:wrap;   
-        overflow: none;       
-        text-overflow: none;    
-        text-align: center;
-    } 
-   }
+
+   
