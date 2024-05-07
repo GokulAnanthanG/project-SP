@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Francois+One&family=Oswald:wght@200..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Francois+One&family=Oswald:wght@200..700&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');/*wel*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); /*pop*/
-@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');/* award font*/
-
-
+@import url("https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Paytone+One&display=swap"); /*wel*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"); /*pop*/
+@import url("https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap"); /* award font*/
 
 /*
 // <uniquifier>: Use a unique and descriptive class name
@@ -31,392 +29,481 @@
 }
 
 */
- 
+
 body {
-    scrollbar-width: thin; /* "auto" or "thin" */
-    scrollbar-color: #888 #f1f1f1; /* thumb and track color */
-    
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: #888 #f1f1f1; /* thumb and track color */
 }
 
 /* WebKit */
 ::-webkit-scrollbar {
-    width: 8px;
- }
+  width: 8px;
+}
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #888; 
-    border-radius: 8px;
+  background: #888;
+  border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
+  background: #555;
 }
-body{
-    /* background: rgb(11,10,75);
+body {
+  /* background: rgb(11,10,75);
 background: -moz-linear-gradient(148deg, rgba(11,10,75,1) 0%, rgba(8,11,64,1) 37%, rgba(110,4,23,1) 100%);
 background: -webkit-linear-gradient(148deg, rgba(11,10,75,1) 0%, rgba(8,11,64,1) 37%, rgba(110,4,23,1) 100%);
 background: linear-gradient(148deg, rgba(11,10,75,1) 0%, rgba(8,11,64,1) 37%, rgba(110,4,23,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endColorstr="#6e0417",GradientType=1); */
-background: rgb(8,7,43);
-background: -moz-linear-gradient(148deg, rgba(8,7,43,1) 0%, rgba(10,12,41,1) 37%, rgba(54,7,15,1) 100%);
-background: -webkit-linear-gradient(148deg, rgba(8,7,43,1) 0%, rgba(10,12,41,1) 37%, rgba(54,7,15,1) 100%);
-background: linear-gradient(148deg, rgba(8,7,43,1) 0%, rgba(10,12,41,1) 37%, rgba(54,7,15,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#08072b",endColorstr="#36070f",GradientType=1);
-background-repeat: no-repeat;
-min-height: 100vh;
+  background: rgb(8, 7, 43);
+  background: -moz-linear-gradient(
+    148deg,
+    rgba(8, 7, 43, 1) 0%,
+    rgba(10, 12, 41, 1) 37%,
+    rgba(54, 7, 15, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    148deg,
+    rgba(8, 7, 43, 1) 0%,
+    rgba(10, 12, 41, 1) 37%,
+    rgba(54, 7, 15, 1) 100%
+  );
+  background: linear-gradient(
+    148deg,
+    rgba(8, 7, 43, 1) 0%,
+    rgba(10, 12, 41, 1) 37%,
+    rgba(54, 7, 15, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#08072b",endColorstr="#36070f",GradientType=1);
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 @media only screen and (max-width: 768px) {
-    html, body {width: auto!important; overflow-x: hidden!important} 
-
+  html,
+  body {
+    width: auto !important;
+    overflow-x: hidden !important;
+    scrollbar-color: transparent; /* thumb and track color */
+  }
 }
-.wrapper{
-     /* background: rgb(159,15,42);
+.wrapper {
+  /* background: rgb(159,15,42);
     background: linear-gradient(148deg, rgb(136, 13, 36) 9%, rgb(6, 20, 71) 76%, rgb(7, 29, 101) 92%); */
-    background: rgb(8,7,43);
-    background: -moz-linear-gradient(148deg, rgba(8,7,43,1) 0%, rgba(10,12,41,1) 37%, rgba(54,7,15,1) 100%);
-    background: -webkit-linear-gradient(148deg, rgba(8,7,43,1) 0%, rgba(10,12,41,1) 37%, rgba(54,7,15,1) 100%);
-    background: linear-gradient(148deg, rgba(8,7,43,1) 0%, rgba(10,12,41,1) 37%, rgba(54,7,15,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#08072b",endColorstr="#36070f",GradientType=1);
-    background-repeat: no-repeat;
-     background-repeat: no-repeat;
-    border-bottom-right-radius: 35px;
-    @media only screen and (max-width: 768px) {
-        padding: 10px;
-    }
+  background: rgb(8, 7, 43);
+  background: -moz-linear-gradient(
+    148deg,
+    rgba(8, 7, 43, 1) 0%,
+    rgba(10, 12, 41, 1) 37%,
+    rgba(54, 7, 15, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    148deg,
+    rgba(8, 7, 43, 1) 0%,
+    rgba(10, 12, 41, 1) 37%,
+    rgba(54, 7, 15, 1) 100%
+  );
+  background: linear-gradient(
+    148deg,
+    rgba(8, 7, 43, 1) 0%,
+    rgba(10, 12, 41, 1) 37%,
+    rgba(54, 7, 15, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#08072b",endColorstr="#36070f",GradientType=1);
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  border-bottom-right-radius: 35px;
+  background-image: linear-gradient(
+      148deg,
+      rgba(8, 7, 43, 0.589) 0%,
+      rgba(10, 12, 41, 0.529) 37%,
+      rgba(54, 7, 15, 0.534) 100%
+    ),
+    url("./assets/placeholder3.JPG");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: background-image 0.5s ease;
+  @media only screen and (max-width: 768px) {
+    padding: 10px;
+    background-image: none;
+  }
 }
-.navbar{
-    background-color: transparent !important;
+.navbar {
+  background-color: transparent !important;
 }
-.navbar-brand{
-    font-family: "Anton", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: gold !important;
-    @media only screen and (max-width: 768px) {
-        font-size: 15px !important;
-    }
+.navbar-brand {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: gold !important;
+  @media only screen and (max-width: 768px) {
+    font-size: 15px !important;
+  }
 }
-.navbar-toggler-icon {    
-    color: white !important;
-    background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28 255, 255, 255,1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")!important;
+.navbar-toggler-icon {
+  color: white !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28 255, 255, 255,1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
-.navbar-nav .nav-link{
-    font-family: "Francois One", sans-serif;
+.navbar-nav .nav-link {
+  font-family: "Francois One", sans-serif;
   font-weight: 400;
   font-style: normal;
   color: rgba(255, 255, 255, 0.929) !important;
 }
- 
-.Welcome{
-    margin-top: 40px;
+
+.Welcome {
+  margin-top: 40px;
+  color: rgba(255, 255, 255, 0.814);
+  font-size: 80px;
+  line-height: 80px;
+  font-family: "Paytone One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  /* Mobile devices (portrait) */
+  @media only screen and (max-width: 768px) {
     color: white;
-    font-size: 80px;
-    line-height: 80px;
-    font-family: "Paytone One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    /* Mobile devices (portrait) */
-@media only screen and (max-width: 768px) {
     margin-top: 10px;
     font-size: 37px;
     line-height: 50px;
     text-align: left;
+  }
 }
+.headerImage{
+  display: none;
+  @media only screen and (max-width: 768px) {
+  display: block;
+  }
 }
-  
-.name{
-    font-size: 50px;
-   font-family: "Passion One", sans-serif;
+.name {
+  font-size: 50px;
+  font-family: "Passion One", sans-serif;
   font-weight: 700;
   font-style: normal;
-  color:#dc297a;
+  color: #dc297a;
   @media only screen and (max-width: 768px) {
     margin-top: 10px;
     font-size: 30px;
+  }
 }
-}
-.about{
-    font-size: 20px;
-    color: white;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color:#efd8e2;
-     @media only screen and (max-width: 768px) {
+.about {
+  width: 900px;
+  margin: auto;
+  font-size: 20px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #efd8e2;
+  @media only screen and (max-width: 768px) {
     text-align: justify;
-     word-spacing: -3.5px;    }
-
+    word-spacing: -3.5px;
+    width: auto;
+    margin: none;
+  }
 }
-    .quotes{
-        font-size: 26px;
-        font-weight: 900;
-        font-family: fantasy;
-    }
-    #star1,#star2{
-        color: yellow;
-    }
-    #star2{
-        margin-top: 30px;
-        float: right;
-    }
-    .playButton{
-        margin-top: 60px;
-        width: 50px;
-        height: 50px;
-        background-color: white;
-        border-radius: 100%;
-          cursor: pointer;
-     }
-    .playButtonsvg{
-        height: 50px;
-        width: 35px;
-        color: #d01368;
-      }
-    .playButtonAni{
-        margin-top: 60px;
-        width: 50px;
-        height: 50px;
-        background-color: white;
-        border-radius: 100%;
-        animation: changeColor1 2000ms ease-out 1000ms   alternate infinite;
-         cursor: pointer;
-     }
-    .playButtonAnisvg{
-        height: 50px;
-        width: 35px;
-        color: #d01368;
-        animation: changeColor 2000ms ease-out 1000ms   alternate infinite;
-        cursor: pointer;     }
-    @keyframes changeColor1 {
-        0%{
-            background-color:  white;
-        }
-        50%{
-            background-color:#d01368 ;
-        }
-        100%{
-            background-color:white;
+.quotes {
+  font-size: 26px;
+  font-weight: 900;
+  font-family: fantasy;
+}
+#star1,
+#star2 {
+  color: yellow;
+}
+#star2 {
+  margin-top: 30px;
+  float: right;
+}
+.playButton {
+  margin-top: 60px;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.playButtonsvg {
+  height: 50px;
+  width: 35px;
+  color: #d01368;
+}
+.playButtonAni {
+  margin-top: 60px;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 100%;
+  animation: changeColor1 2000ms ease-out 1000ms alternate infinite;
+  cursor: pointer;
+}
+.playButtonAnisvg {
+  height: 50px;
+  width: 35px;
+  color: #d01368;
+  animation: changeColor 2000ms ease-out 1000ms alternate infinite;
+  cursor: pointer;
+}
+@keyframes changeColor1 {
+  0% {
+    background-color: white;
+  }
+  50% {
+    background-color: #d01368;
+  }
+  100% {
+    background-color: white;
+  }
+}
+@keyframes changeColor {
+  0% {
+    color: rgb(14, 40, 130);
+  }
+  50% {
+    color: white;
+  }
+  100% {
+    color: rgb(15, 42, 141);
+  }
+}
+.gapAdder {
+  height: 50px;
+  @media only screen and (max-width: 768px) {
+    height: 20px;
+  }
+}
+.sub-heading {
+  color: white;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.sub-heading .colorOne {
+  color: #d01368;
+  font-family: fantasy;
+}
+.sub-heading .colorTwo {
+  color: #d01368;
+  font-family: fantasy;
+}
+.Event {
+  @media only screen and (max-width: 768px) {
+    padding: 10px;
+  }
+}
+.Event .title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 390px;
+}
+.Event .card {
+  background-color: #15171e;
+  color: white;
+  border-right: 5px solid #9f2059;
+  border-bottom: 5px solid #9f2059;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+.Event .card img {
+  max-width: 250px;
+  max-height: 150px;
+  object-fit: cover;
+}
+.Event .card .title {
+  font-family: Poppins;
+  color: rgba(255, 255, 255, 0.866);
+  font-size: 18px;
+}
+.Event .card .location {
+  font-family: "Francois One", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+.Event .card .date {
+  font-family: Poppins;
+  font-weight: 400;
 
-        }
-    }
-    @keyframes changeColor {
-        0%{
-           color:  rgb(14, 40, 130) ;
-        }
-        50%{
-             color:white ;
-        }
-        100%{
-             color: rgb(15, 42, 141) ;
+  font-size: 16px;
+}
+.Event .card button {
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 2px;
+  font-family: Poppins;
+  background-color: rgb(7, 29, 101);
+  color: rgba(255, 255, 255, 0.866);
+}
+.Event .card button:hover {
+  background-color: rgba(255, 255, 255, 0.866);
+  color: black;
+}
 
-        }
-    }
-    .gapAdder{
-        height: 50px;
-        @media only screen and (max-width: 768px) {
-            height: 20px;
-        }
-    }
-    .sub-heading{
-        color: white;
-        font-family: "Oswald", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 400;
-        font-style: normal;
-     }
-     .sub-heading .colorOne{
-        color: #d01368;
-        font-family: fantasy;
-     }
-     .sub-heading .colorTwo{
-        color: #d01368;
-        font-family: fantasy;
-     }
-     .Event{
-        @media only screen and (max-width: 768px) {
-            padding: 10px;
-        }
-     }
-    .Event .title{
-            white-space: nowrap;        
-            overflow: hidden;           
-            text-overflow: ellipsis;    
-            max-width: 390px;               
-    }
-    .Event .card{
-        background-color: #15171E;
-        color: white;
-        border-right: 5px solid #9f2059;
-        border-bottom: 5px solid #9f2059;
-        border-top-right-radius: 8px;
-        border-top-left-radius: 8px;
-    }
-    .Event .card img{
-        max-width:250px;
-        max-height: 150px;
-        object-fit: cover;
-    }
-    .Event .card .title{
-        font-family: Poppins;
-        color: rgba(255, 255, 255, 0.866);
-        font-size: 18px;
-    }
-    .Event .card .location{
-        font-family: "Francois One", sans-serif;
-        font-weight: 400;
-        font-size: 16px;
-    }
-    .Event .card .date{
-        font-family: Poppins;
-        font-weight: 400;
-       
-        font-size: 16px;
-    }
-    .Event .card button{
-        width: 150px;
-        height: 40px;
-        border: none;
-        border-radius: 2px;
-        font-family: Poppins; background-color: rgb(7, 29, 101);
-        color: rgba(255, 255, 255, 0.866);
-    }
-    .Event .card button:hover{
-        background-color: rgba(255, 255, 255, 0.866);
-        color: black;
-    }
-
-    .video .card{
-        background-color: #15171E;
-        color: white;
-        border-left: 5px solid rgb(7, 29, 101);
-        border-top: 5px solid rgb(7, 29, 101);
-        border-top-right-radius: 8px;
-        border-top-left-radius: 8px;
-    }
-    .videoText{
-        font-family: Poppins;
-        height:75px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 3; /* Number of lines to show */
-            -webkit-box-orient: vertical;
-            height: calc(1.5 * 4); /* Line height * Number of lines */
-            line-height: 1.5; /* Line height */     
-    }
-    .Achivement{
-         /* background: rgb(8,7,43);
+.video .card {
+  background-color: #15171e;
+  color: white;
+  border-left: 5px solid rgb(7, 29, 101);
+  border-top: 5px solid rgb(7, 29, 101);
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+.videoText {
+  font-family: Poppins;
+  height: 75px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+  height: calc(1.5 * 4); /* Line height * Number of lines */
+  line-height: 1.5; /* Line height */
+}
+.Achivement {
+  /* background: rgb(8,7,43);
 background: -moz-linear-gradient(148deg, rgba(8,7,43,1) 0%, rgba(14,17,69,1) 37%, rgba(69,3,15,1) 100%);
 background: -webkit-linear-gradient(148deg, rgba(8,7,43,1) 0%, rgba(14,17,69,1) 37%, rgba(69,3,15,1) 100%);
 background: linear-gradient(148deg, rgba(8,7,43,1) 0%, rgba(14,17,69,1) 37%, rgba(69,3,15,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#08072b",endColorstr="#45030f",GradientType=1);   */
-background: rgb(8,7,43);
-background: -moz-linear-gradient(148deg, rgba(8,7,43,1) 0%, rgba(10,12,41,1) 37%, rgba(54,7,15,1) 100%);
-background: -webkit-linear-gradient(148deg, rgba(8,7,43,1) 0%, rgba(10,12,41,1) 37%, rgba(54,7,15,1) 100%);
-background: linear-gradient(148deg, rgba(8,7,43,1) 0%, rgba(10,12,41,1) 37%, rgba(54,7,15,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#08072b",endColorstr="#36070f",GradientType=1);
-@media only screen and (max-width: 768px) {
+  background: rgb(8, 7, 43);
+  background: -moz-linear-gradient(
+    148deg,
+    rgba(8, 7, 43, 1) 0%,
+    rgba(10, 12, 41, 1) 37%,
+    rgba(54, 7, 15, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    148deg,
+    rgba(8, 7, 43, 1) 0%,
+    rgba(10, 12, 41, 1) 37%,
+    rgba(54, 7, 15, 1) 100%
+  );
+  background: linear-gradient(
+    148deg,
+    rgba(8, 7, 43, 1) 0%,
+    rgba(10, 12, 41, 1) 37%,
+    rgba(54, 7, 15, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#08072b",endColorstr="#36070f",GradientType=1);
+  @media only screen and (max-width: 768px) {
     padding: 10px;
+  }
 }
-    }
-    .Achivement .card{
-        background-color: #15171E;
-        padding: 20px;
-        min-height: 300px;
-        max-height: 300px;
-        min-width: 321px;
-        max-width: 321px;
+.Achivement .card {
+  background-color: #15171e;
+  padding: 20px;
+  min-height: 300px;
+  max-height: 300px;
+  min-width: 321px;
+  max-width: 321px;
 
-        @media only screen and (max-width: 768px) {
-            min-width: 290px;
-            max-width: 290px;
-            min-height: 315px;
-            max-height: 315px;
-        }
+  @media only screen and (max-width: 768px) {
+    min-width: 290px;
+    max-width: 290px;
+    min-height: 315px;
+    max-height: 315px;
+  }
+}
+.Achivement .title {
+  padding: 30px;
+  border-radius: 8px;
+  min-height: 150px;
+  max-height: 150px;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(53, 46, 24, 0.52),
+      rgba(126, 82, 31, 0.73)
+    ),
+    url("assets/award-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+.Achivement .title h5 {
+  line-height: 28px;
+  font-family: "Philosopher", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  margin-top: 5px;
+}
+.Achivement p {
+  font-size: 15px;
+  font-family: Poppins;
+  word-spacing: -2px;
+  color: rgba(255, 255, 255, 0.647);
+}
+.Achivement .col-lg-3 {
+  margin: auto !important;
+}
+.shortBox {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 200px;
+  background: rgb(13, 6, 6);
+  background: -moz-linear-gradient(
+    148deg,
+    rgba(13, 6, 6, 1) 0%,
+    rgba(79, 15, 79, 1) 51%,
+    rgba(19, 28, 92, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    148deg,
+    rgba(13, 6, 6, 1) 0%,
+    rgba(79, 15, 79, 1) 51%,
+    rgba(19, 28, 92, 1) 100%
+  );
+  background: linear-gradient(
+    148deg,
+    rgba(13, 6, 6, 1) 0%,
+    rgba(79, 15, 79, 1) 51%,
+    rgba(19, 28, 92, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d0606",endColorstr="#131c5c",GradientType=1);
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 6px;
+  }
+}
+.shortBox .box img {
+  position: relative;
+  top: -80px;
+  height: 250px;
+}
+.shortBox .imgBox {
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+}
+.shortBox h2,
+.shortBox h3 {
+  font-family: "Anton", sans-serif;
+  color: white;
+}
+.shortBox p {
+  font-family: "Francois One", sans-serif;
+}
+.shortBox h3 {
+  cursor: pointer;
+}
 
-      }
-    .Achivement .title{
-        padding: 30px;
-       border-radius: 8px;
-        min-height: 150px;
-        max-height: 150px;
-        background-image:linear-gradient(to bottom, rgba(53, 46, 24, 0.52), rgba(126, 82, 31, 0.73)), url("assets/award-bg.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        color: white;
-
-      }
-      .Achivement .title h5{
-        line-height: 28px;
-        font-family: "Philosopher", sans-serif;
-        font-weight: 700;
-        font-style: normal;
-        margin-top: 5px;
-      }
-      .Achivement  p{
-        font-size:15px;
-        font-family: Poppins;
-        word-spacing: -2px;
-        color: rgba(255, 255, 255, 0.647);
-      }
-      .Achivement .col-lg-3{
-        margin: auto  !important;
-      }
-      .shortBox{
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        height:200px;
-        background: rgb(13,6,6);
-        background: -moz-linear-gradient(148deg, rgba(13,6,6,1) 0%, rgba(79,15,79,1) 51%, rgba(19,28,92,1) 100%);
-        background: -webkit-linear-gradient(148deg, rgba(13,6,6,1) 0%, rgba(79,15,79,1) 51%, rgba(19,28,92,1) 100%);
-        background: linear-gradient(148deg, rgba(13,6,6,1) 0%, rgba(79,15,79,1) 51%, rgba(19,28,92,1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d0606",endColorstr="#131c5c",GradientType=1);
-        @media only screen and (max-width: 768px) {
-             flex-direction: column;
-             padding: 20px;
-             border-radius: 6px;
-        }
-   
-    }  
-      .shortBox .box img{
-        position: relative;
-        top: -80px;
-        height: 250px;
-      }
-      .shortBox .imgBox{
-        @media only screen and (max-width: 768px) {
-            display: none;
-        }
-      }
-      .shortBox h2, .shortBox h3{
-        font-family: "Anton", sans-serif;
-        color: white;
-      }
-      .shortBox p{
-        font-family: "Francois One", sans-serif;
-      }
-      .shortBox h3{
-        cursor: pointer;
-      }
-     
-      footer .col-lg-4:first-child{
-        opacity: 0.6;
-      }
-      footer a{
-        color: #555 !important;
-        text-decoration: none;
-        font-size: 26px;
-      }
-      footer .col-lg-4:last-child{
-        opacity: 0.6;
-      }
-      footer .col-lg-4:last-child a{
-        font-size: 16px;
-        text-decoration: underline;
-      }
+footer .col-lg-4:first-child {
+  opacity: 0.6;
+}
+footer a {
+  color: #555 !important;
+  text-decoration: none;
+  font-size: 26px;
+}
+footer .col-lg-4:last-child {
+  opacity: 0.6;
+}
+footer .col-lg-4:last-child a {
+  font-size: 16px;
+  text-decoration: underline;
+}
