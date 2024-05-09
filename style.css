@@ -298,7 +298,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 390px;
+  max-width: 550px;
 }
 .Event .card {
   background-color: #15171e;
@@ -308,7 +308,10 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
 }
+ 
 .Event .card img {
+  min-width: 250px;
+  min-height: 150px;
   max-width: 250px;
   max-height: 150px;
   object-fit: cover;
@@ -321,13 +324,19 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
 .Event .card .location {
   font-family: "Francois One", sans-serif;
   font-weight: 400;
-  font-size: 16px;
-}
+  font-size: 14px;
+ }
+ .Event .card .textBox p{
+  font-size: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 290px;
+  }
 .Event .card .date {
   font-family: Poppins;
   font-weight: 400;
-
-  font-size: 16px;
+  font-size: 12px;
 }
 .Event .card button {
   width: 150px;

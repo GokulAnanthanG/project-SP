@@ -1,5 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
+  //getpost
+  getPagePosts();
   //slider
   // Check if it's not a mobile device
 if (!(/Mobi|Android/i.test(navigator.userAgent))) {
@@ -45,7 +47,7 @@ setInterval(()=>{
       document.querySelector(".playButtonsvg").classList.remove("playButtonAnisvg");
     });
 
-  //  displayLatestVideos();
+  //displayLatestVideos();
 
 });
 
@@ -120,4 +122,128 @@ div.setAttribute("data-aos-delay",1300)
       div.appendChild(innerDiv);
       videosContainer.appendChild(div);
   });
+  //fb posts
+    
 }
+var PAGE_ACCESS_TOKEN = 'EAAVX5c18p0kBOytEwoGRTwOMCuax4WT6nvPrAnpMsDDEMYvslQZCBGKUGzv9Ac6dSdENut3gMwckj11cjbqf9ZBJHaofY0BjhCZAjngeaUq4rzZCKsgx80hjqvgkZCxbM3CJp2D2Rh5JjAUDkMNUXZB9coTq5kuzg9qPQoAWJxZA7syh4nZCZAdFhNmPtZCajikTIZD';
+
+    var PAGE_ID = '140032333456457';
+   
+   function getPagePosts() {
+        fetch(`https://graph.facebook.com/v12.0/${PAGE_ID}/posts?fields=message,full_picture,created_time,place,attachments&access_token=${PAGE_ACCESS_TOKEN}`)
+           .then(response => response.json())
+           .then(data => {
+            document.querySelector(".spinner").style.display="none"
+
+               var posts = data.data.splice(0,4);
+               var postsWithImages = [];
+               console.log(postsWithImages);
+               posts.forEach(function(post) {
+                   var message = post.message ? post.message : 'No message available';
+                   var options = { weekday: 'short', month: 'short', year: 'numeric' };
+                   var createdTime = new Date(post.created_time).toLocaleDateString('en-US', options);
+                   var location = post.place ? post.place.location : null;
+                   var locationHtml = '';
+                   if (location) {
+                       locationHtml = `<p>Location: ${location.city}, ${location.country}</p>`;
+                   }
+
+                    var images = [];
+                   var attachments = post.attachments;
+                   if (attachments && attachments.data && attachments.data.length > 0) {
+                       attachments.data.forEach(function(attachment) {
+                           if (attachment.type === 'photo') {
+                               images.push(attachment.media.image.src);
+                           }
+                            if (attachment.subattachments && attachment.subattachments.data && attachment.subattachments.data.length > 0) {
+                               attachment.subattachments.data.forEach(function(subattachment) {
+                                   if (subattachment.type === 'photo') {
+                                       images.push(subattachment.media.image.src);
+                                   }
+                               });
+                           }
+                       });
+                   }
+
+                    if (images.length === 0) {
+                       images.push('No images available');
+                   }
+
+                   var postWithImages = {
+                       message: message,
+                       createdTime: createdTime,
+                       location: location,
+                       images: images
+                   };
+                   postsWithImages.push(postWithImages);
+               });
+
+               renderPosts(postsWithImages);
+           })
+           .catch(error => {
+               console.error('Error fetching posts:', error);
+           });
+   }
+
+   function renderPosts(postsWithImages) {
+       
+       postsWithImages.forEach(function(post,i) {
+           var locationHtml = post.location ? `<span>${post.location.city}, ${post.location.country}</span>` : '';
+let div= document.createElement("div");
+div.classList.add("col-lg-3");
+div.classList.add("my-2");
+div.classList.add("my-2");
+
+if(i==0){
+ div.setAttribute("data-aos","fade-right");
+div.setAttribute("data-aos-duration",700)
+div.setAttribute("data-aos-once",true)
+div.setAttribute("data-aos-delay",700)
+}
+if(i==1){
+ div.setAttribute("data-aos","fade-right");
+div.setAttribute("data-aos-duration",1000)
+div.setAttribute("data-aos-once",true)
+div.setAttribute("data-aos-delay",1000)
+}
+if(i==2){
+ div.setAttribute("data-aos","fade-right");
+div.setAttribute("data-aos-duration",1300)
+div.setAttribute("data-aos-once",true)
+div.setAttribute("data-aos-delay",1300)
+}
+if(i==3){
+  div.setAttribute("data-aos","fade-right");
+ div.setAttribute("data-aos-duration",1600)
+ div.setAttribute("data-aos-once",true)
+ div.setAttribute("data-aos-delay",1600)
+ }
+
+let card=document.createElement("div");
+card.classList.add("card");
+card.classList.add("p-3");
+
+let center=document.createElement("center");
+let img=document.createElement("img");
+img.src=post.images[0];
+img.classList.add("img-fluid");
+img.classList.add("img-thumbnail");
+center.appendChild(img);
+
+let textBox=document.createElement("div");
+textBox.classList.add("textBox");
+textBox.classList.add("p-3");
+textBox.innerHTML=`<h5 style='font-size:14px' class="title my-1" align="center">${post.message}</h5>
+<p align="center" class="my-1"><span class="date">${post.createdTime}</span> |
+  <span class="location"> <i class='fas fa-map-marker-alt'></i> ${locationHtml?`<span>${locationHtml}<span>`:"not mentioned"} </span>
+</p>`;
+let center2=document.createElement("center");
+center2.innerHTML=`<a href='viewEvent.html?index=${i}'><button>Details</button></center>`;
+card.appendChild(center);
+card.appendChild(textBox);
+card.appendChild(center2);
+div.appendChild(card);
+document.getElementById('posts').appendChild(div);
+        });
+    }
+

@@ -9,6 +9,7 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script src="viewEvent.js"></script>
 </head>
 <body>
     <div class="container">
@@ -24,7 +25,7 @@
                 </ul>
                 <span class="navbar-text">
                   <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    <a class="nav-link active" aria-current="page" href="home.html">Home</a>
                     <a class="nav-link" href="about.html">About</a>
                     <a class="nav-link" href="events.html">Recent Events</a>
                     <a class="nav-link" href="videos.html">Videos</a>
@@ -47,20 +48,22 @@
           </nav>
     <br>
     <main>
+      <div class="spinner">
+        <center><div class="spinner-border m-5" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div></center>
+      </div>
+
         <div class="container p-lg-5">
-            <p align="justify"><img class="img-fluid img-thumbnail m-2" src="./assets/placeholder3.JPG" alt="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde animi earum, asperiores quas nisi fugiat cumque, perferendis veniam corrupti nam possimus neque atque est aperiam corporis odio ab aut a obcaecati! Fugit, quos? Ipsum, eum possimus. Aliquid corporis, architecto quis veritatis accusamus iure dolorum repellat, sit veniam molestias accusantium totam pariatur voluptate laborum eius quaerat mollitia aspernatur quibusdam voluptatum itaque. Quis earum facere atque sapiente asperiores nihil soluta provident quasi ipsum assumenda. Labore aperiam ab, reprehenderit itaque, optio natus inventore laboriosam architecto nulla, unde ratione! Voluptate consequuntur sed aspernatur ipsum minima id, reprehenderit necessitatibus non animi nisi omnis adipisci veniam!Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Et tenetur delectus hic eum vero nihil ipsam totam laudantium quasi, nulla ut eveniet quod a quo perferendis voluptatem cupiditate adipisci molestias fugiat quis inventore? Necessitatibus sint perferendis numquam iste ea nulla adipisci facilis dignissimos, qui mollitia nesciunt? Illum nostrum nobis eligendi, optio consectetur delectus deleniti autem in, alias id vero? Itaque laborum ut labore fugiat nesciunt accusantium voluptates voluptate, exercitationem vel praesentium vero quo porro molestiae et placeat, earum sunt deleniti modi iure? Distinctio suscipit natus quis, dignissimos dolorum sunt asperiores delectus sed, nesciunt mollitia sit omnis nisi debitis! Nisi, repudiandae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio esse culpa omnis commodi iure eveniet amet minus vero molestiae suscipit, excepturi itaque. Tempora ipsam reprehenderit quaerat vitae eveniet tenetur, temporibus modi sapiente quisquam delectus. Excepturi, quas error cumque ut ad ullam alias consectetur, quasi ratione ex aliquam, tempora perferendis accusamus.</p>
-            <div class="row">
-                <p><span class="date"><i class="fas fa-calendar-alt"></i> Sat, 20 May</span>&nbsp;&nbsp;<span class="location"><i class="fas fa-map-marker-alt"></i> Lil Trails, Adyar, Chennai</span></p>
+            <p align="justify"><img id="topImg"  class="img-fluid img-thumbnail m-2 bigImage" src=" " alt=""><span id="content"></span></p>
+            <div class="row contentBox">
+                <p><span class="date"><i class="fas fa-calendar-alt"></i> <span id="date">--</span></span>&nbsp;&nbsp;<span class="location"><i class="fas fa-map-marker-alt"></i> <span id="location">--</span></span></p>
             </div>
             <br>
             <h3>Photos captured during the event</h3>
-            <div class="row">
-                <div class="col-lg-4 mt-2"><img src="assets/placeholder3.JPG" alt="" class="img-fluid img-thumbnail"></div>
-                <div class="col-lg-4 mt-2"><img src="assets/placeholder.png" alt="" class="img-fluid img-thumbnail"></div>
-                <div class="col-lg-4 mt-2"><img src="assets/placeholder5.png" alt="" class="img-fluid img-thumbnail"></div>
-                <div class="col-lg-4 mt-2"><img src="assets/placeholder3.JPG" alt="" class="img-fluid img-thumbnail"></div>
-                <div class="col-lg-4 mt-2"><img src="assets/placeholder.png" alt="" class="img-fluid img-thumbnail"></div>
-                <div class="col-lg-4 mt-2"><img src="assets/placeholder5.png" alt="" class="img-fluid img-thumbnail"></div>
+            <p align="center" id="status"></p>
+            <div class="row images">
+                 
             </div>
 
         </div>
