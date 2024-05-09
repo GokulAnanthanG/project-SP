@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   getPagePosts();
   //slider
   // Check if it's not a mobile device
-if (!(/Mobi|Android/i.test(navigator.userAgent))) {
+// if (!(/Mobi|Android/i.test(navigator.userAgent))) {
   const gradient = "linear-gradient(148deg, rgba(8, 7, 43, 0.705) 0%, rgba(10, 12, 41, 0.722) 37%, rgba(54, 7, 15, 0.653) 100%)";
  let imageUrl;
   let backgroundImage = `${gradient}, ${imageUrl}`;
@@ -18,7 +18,7 @@ setInterval(()=>{
     document.querySelector(".wrapper").style.backgroundImage = backgroundImage;
     count++;
   },5000)
-}
+//}
   //slider
     var audioBtn=document.querySelector(".playButton");
     var audio = new Audio('./assets/About Thiru A Kaliyamurthy Former Superintendent of Police _ Video by News 7.mp3');
@@ -47,7 +47,7 @@ setInterval(()=>{
       document.querySelector(".playButtonsvg").classList.remove("playButtonAnisvg");
     });
 
-  //displayLatestVideos();
+  displayLatestVideos();
 
 });
 
