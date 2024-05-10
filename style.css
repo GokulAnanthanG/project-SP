@@ -87,17 +87,20 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
     width: auto !important;
     overflow-x: hidden !important;
   }
-  @media screen and (max-width: 767px) {
-    body {
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none; /* Internet Explorer and Edge */
-        overflow-y: scroll; /* Always show a scrollbar */
-        -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
-    }
-    body::-webkit-scrollbar {
-        display: none; /* Hide the scrollbar for WebKit browsers */
-    }
-}
+     body {
+      scrollbar-color: transparent transparent; /* Firefox */
+      scrollbar-width: thin; /* Firefox */
+      -ms-overflow-style: none; /* Internet Explorer and Edge */
+      overflow-y: scroll; /* Always show a scrollbar */
+      -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
+  }
+  body::-webkit-scrollbar {
+      width: 6px; /* Width of the scrollbar for WebKit browsers */
+  }
+  body::-webkit-scrollbar-thumb {
+      background-color: transparent; /* Transparent color for the scrollbar thumb */
+  }
+
 }
 .wrapper {
   /* background: rgb(159,15,42);
@@ -134,8 +137,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
-  overflow-y: hidden !important;
+   overflow-y: hidden !important;
   transition: background-image 0.5s ease;
   @media only screen and (max-width: 768px) {
     padding: 4px;
