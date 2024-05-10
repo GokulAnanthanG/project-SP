@@ -4,11 +4,16 @@ document.addEventListener('DOMContentLoaded', function() {
   getPagePosts();
   //slider
   // Check if it's not a mobile device
-// if (!(/Mobi|Android/i.test(navigator.userAgent))) {
+ var imgArray
+ if (!(/Mobi|Android/i.test(navigator.userAgent))) {
+   imgArray=["url('./assets/slider/slider1.JPG')","url('./assets/slider/slider2.jpg')","url('./assets/slider/slider3.jpg')","url('./assets/slider/slider4.JPG')"];
+ }
+ else{
+    imgArray=["url('./assets/slider/slider1_m.JPG')","url('./assets/slider/slider2_m.JPG')","url('./assets/slider/slider3_m.JPG')","url('./assets/slider/slider4.JPG')"];
+ }
   const gradient = "linear-gradient(148deg, rgba(8, 7, 43, 0.705) 0%, rgba(10, 12, 41, 0.722) 37%, rgba(54, 7, 15, 0.653) 100%)";
  let imageUrl;
   let backgroundImage = `${gradient}, ${imageUrl}`;
-const imgArray=["url('./assets/slider/slider1.JPG')","url('./assets/slider/slider2.jpg')","url('./assets/slider/slider3.jpg')","url('./assets/slider/slider4.JPG')"];
 let count=0;  
 setInterval(()=>{
   if(count>=imgArray.length)count=0;
@@ -18,7 +23,7 @@ setInterval(()=>{
     document.querySelector(".wrapper").style.backgroundImage = backgroundImage;
     count++;
   },5000)
-//}
+
   //slider
     var audioBtn=document.querySelector(".playButton");
     var audio = new Audio('./assets/About Thiru A Kaliyamurthy Former Superintendent of Police _ Video by News 7.mp3');

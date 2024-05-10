@@ -137,6 +137,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
    overflow-y: hidden !important;
   transition: background-image 0.5s ease;
   @media only screen and (max-width: 768px) {
