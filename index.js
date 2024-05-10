@@ -47,7 +47,7 @@ setInterval(()=>{
       document.querySelector(".playButtonsvg").classList.remove("playButtonAnisvg");
     });
 
-  displayLatestVideos();
+  //displayLatestVideos();
 
 });
 
