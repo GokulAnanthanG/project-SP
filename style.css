@@ -86,8 +86,18 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
   body {
     width: auto !important;
     overflow-x: hidden !important;
-    scrollbar-color: transparent; /* thumb and track color */
   }
+  @media screen and (max-width: 767px) {
+    body {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer and Edge */
+        overflow-y: scroll; /* Always show a scrollbar */
+        -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
+    }
+    body::-webkit-scrollbar {
+        display: none; /* Hide the scrollbar for WebKit browsers */
+    }
+}
 }
 .wrapper {
   /* background: rgb(159,15,42);
