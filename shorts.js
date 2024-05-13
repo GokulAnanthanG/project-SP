@@ -1,49 +1,82 @@
-// Replace 'YOUR_API_KEY' with your actual API key
-const API_KEY = 'AIzaSyBOCxECc8aX3GvqFvxGOxtJ-UWA1X6eHlo';
-const API_URL = 'https://www.googleapis.com/youtube/v3/playlistItems';
-const playlistId = 'PLMl3UAQZqwQsI1SXiNzkHu61FOqTZpLKE'; // Replace with your Shorts playlist ID
+document.addEventListener("DOMContentLoaded", function() {
+    // Replace 'PAGE_ACCESS_TOKEN' with your actual Facebook Page Access Token
+    var PAGE_ACCESS_TOKEN = 'EAAVX5c18p0kBOytEwoGRTwOMCuax4WT6nvPrAnpMsDDEMYvslQZCBGKUGzv9Ac6dSdENut3gMwckj11cjbqf9ZBJHaofY0BjhCZAjngeaUq4rzZCKsgx80hjqvgkZCxbM3CJp2D2Rh5JjAUDkMNUXZB9coTq5kuzg9qPQoAWJxZA7syh4nZCZAdFhNmPtZCajikTIZD';
 
-// Function to fetch Shorts videos from YouTube Data API
-async function fetchShortsVideos() {
-    const response = await fetch(`${API_URL}?part=snippet&maxResults=20&playlistId=${playlistId}&key=${API_KEY}`);
-    const data = await response.json();
-    return data.items;
-}
+    // Replace 'PAGE_ID' with the ID of the Facebook page whose videos you want to fetch
+    var PAGE_ID = '140032333456457';
+    var videos=[]
+    function getPageVideos() {
+        // Fetch page posts with videos only
+        fetch(`https://graph.facebook.com/v12.0/${PAGE_ID}/videos?fields=source,description,created_time&access_token=${PAGE_ACCESS_TOKEN}`)
+            .then(response => response.json())
+            .then(data => {
+             videos = data.data;
+               
+                initial_trigger = videos.splice(0, 6); // This will take the first 4 videos and remove them from 'videos'
+                 initial_trigger.forEach(function(video) {
 
-// Function to display Shorts videos on webpage
-async function displayShortsVideos() {
-    const shortsContainer = document.getElementById('shorts-videos');
+                    var colDiv = document.createElement('div');
+                    colDiv.className = 'col-lg-4 mt-2';
 
-    // Fetch Shorts videos
-    const shortsVideos = await fetchShortsVideos();
+                    var videoContainer = document.createElement('div');
+                    videoContainer.className = 'video-container card';
 
-    // Display Shorts videos
-    shortsVideos.forEach(video => {
-        if (video.snippet) {
-            const videoId = video.snippet.resourceId ? video.snippet.resourceId.videoId : null;
-            if (videoId) {
-                //
-                let div=document.createElement("div");
-                div.classList.add("col-lg-4");
-                div.classList.add("mt-2");
-                let card=document.createElement("div");
-                card.classList.add("card");
-                //
-                const videoTitle = video.snippet.title;
-                const videoThumbnail = video.snippet.thumbnails.default.url;
+                    var videoElement = document.createElement('video');
+                    videoElement.className = 'video';
+                    videoElement.controls = true;
 
-                const videoElement = document.createElement('iframe');
-                videoElement.src = `https://www.youtube.com/embed/${videoId}`;
-                videoElement.title = videoTitle;
-                videoElement.width = 'auto';
-                videoElement.height ='300';
-                card.appendChild(videoElement);
-                div.appendChild(card);
-                shortsContainer.appendChild(div);
-            }
-        }
-    });
-}
+                    var sourceElement = document.createElement('source');
+                    sourceElement.src = video.source;
+                    sourceElement.type = 'video/mp4';
 
-// Call function to display Shorts videos
-displayShortsVideos();
+                    videoElement.appendChild(sourceElement);
+                    videoContainer.appendChild(videoElement);
+                    colDiv.appendChild(videoContainer);
+
+                    document.getElementById('videos').appendChild(colDiv);
+                 });
+
+             })
+            .catch(error => {
+                console.error('Error fetching videos:', error);
+                alert("Error fetching videos");
+            });
+
+    }
+
+   getPageVideos();
+   /////////////////////////////////////
+   
+window.addEventListener('scroll', function() {
+    const videosElement = document.getElementById('videos');
+    const scrollPosition = window.scrollY + window.innerHeight;
+    const videosBottom = videosElement.offsetTop + videosElement.offsetHeight;
+
+    if (scrollPosition >= videosBottom) {
+    if (videos.length > 0) {
+        var video = videos.shift(); // Get the next video and remove it from the array
+
+        var colDiv = document.createElement('div');
+        colDiv.className = 'col-lg-4 mt-2';
+
+        var videoContainer = document.createElement('div');
+        videoContainer.className = 'video-container card';
+
+        var videoElement = document.createElement('video');
+        videoElement.className = 'video';
+        videoElement.controls = true;
+
+        var sourceElement = document.createElement('source');
+        sourceElement.src = video.source;
+        sourceElement.type = 'video/mp4';
+
+        videoElement.appendChild(sourceElement);
+        videoContainer.appendChild(videoElement);
+        colDiv.appendChild(videoContainer);
+
+        document.getElementById('videos').appendChild(colDiv);
+    }
+    }
+});
+
+});

@@ -1,7 +1,9 @@
 
 document.addEventListener('DOMContentLoaded', function() {
-  //getpost
+   //getpost and video
   getPagePosts();
+  displayLatestVideos();
+
   //slider
   // Check if it's not a mobile device
  var imgArray
@@ -52,7 +54,6 @@ setInterval(()=>{
       document.querySelector(".playButtonsvg").classList.remove("playButtonAnisvg");
     });
 
-  //displayLatestVideos();
 
 });
 
@@ -61,7 +62,7 @@ const API_KEY = 'AIzaSyBOCxECc8aX3GvqFvxGOxtJ-UWA1X6eHlo';
 const CHANNEL_ID = 'UCsn_aZqbyOfH9PZOfUmFPZQ';
 
 async function fetchLatestVideos() {
-  const response = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=3`);
+  const response = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=4`);
   const data = await response.json();
   return data.items;
 }
@@ -75,7 +76,8 @@ async function displayLatestVideos() {
     //
 let div=document.createElement("div");
 if(i==0){
-  div.classList.add("col-lg-4")
+  div.classList.add("col-lg-3");
+  div.classList.add("col-md-6");
 div.classList.add("my-2");
 div.setAttribute("data-aos","fade-up");
 div.setAttribute("data-aos-duration",700)
@@ -83,7 +85,8 @@ div.setAttribute("data-aos-once",true)
 div.setAttribute("data-aos-delay",700)
 }
 if(i==1){
-  div.classList.add("col-lg-4")
+  div.classList.add("col-lg-3");
+  div.classList.add("col-md-6");
 div.classList.add("my-2");
 div.setAttribute("data-aos","fade-up");
 div.setAttribute("data-aos-duration",1000)
@@ -91,12 +94,22 @@ div.setAttribute("data-aos-once",true)
 div.setAttribute("data-aos-delay",1000)
 }
 if(i==2){
-  div.classList.add("col-lg-4")
+  div.classList.add("col-lg-3");
+  div.classList.add("col-md-6");
 div.classList.add("my-2");
 div.setAttribute("data-aos","fade-up");
 div.setAttribute("data-aos-duration",1300)
 div.setAttribute("data-aos-once",true)
 div.setAttribute("data-aos-delay",1300)
+}
+if(i==3){
+  div.classList.add("col-lg-3");
+  div.classList.add("col-md-6");
+div.classList.add("my-2");
+div.setAttribute("data-aos","fade-up");
+div.setAttribute("data-aos-duration",1600)
+div.setAttribute("data-aos-once",true)
+div.setAttribute("data-aos-delay",1600)
 }
    //
    //
@@ -140,7 +153,7 @@ var PAGE_ACCESS_TOKEN = 'EAAVX5c18p0kBOytEwoGRTwOMCuax4WT6nvPrAnpMsDDEMYvslQZCBG
            .then(data => {
             document.querySelector(".spinner").style.display="none"
 
-               var posts = data.data.splice(0,4);
+               var posts = data.data;
                var postsWithImages = [];
                console.log(postsWithImages);
                posts.forEach(function(post) {
@@ -191,33 +204,36 @@ var PAGE_ACCESS_TOKEN = 'EAAVX5c18p0kBOytEwoGRTwOMCuax4WT6nvPrAnpMsDDEMYvslQZCBG
    }
 
    function renderPosts(postsWithImages) {
-       
+    let count=0;
+      
        postsWithImages.forEach(function(post,i) {
+        if(post.images[0]!="No images available"){
            var locationHtml = post.location ? `<span>${post.location.city}, ${post.location.country}</span>` : '';
 let div= document.createElement("div");
 div.classList.add("col-lg-3");
+div.classList.add("col-md-6");
 div.classList.add("my-2");
 div.classList.add("my-2");
 
-if(i==0){
+if(count==0){
  div.setAttribute("data-aos","fade-right");
 div.setAttribute("data-aos-duration",700)
 div.setAttribute("data-aos-once",true)
 div.setAttribute("data-aos-delay",700)
 }
-if(i==1){
+if(count==1){
  div.setAttribute("data-aos","fade-right");
 div.setAttribute("data-aos-duration",1000)
 div.setAttribute("data-aos-once",true)
 div.setAttribute("data-aos-delay",1000)
 }
-if(i==2){
+if(count==2){
  div.setAttribute("data-aos","fade-right");
 div.setAttribute("data-aos-duration",1300)
 div.setAttribute("data-aos-once",true)
 div.setAttribute("data-aos-delay",1300)
 }
-if(i==3){
+if(count==3){
   div.setAttribute("data-aos","fade-right");
  div.setAttribute("data-aos-duration",1600)
  div.setAttribute("data-aos-once",true)
@@ -249,6 +265,8 @@ card.appendChild(textBox);
 card.appendChild(center2);
 div.appendChild(card);
 document.getElementById('posts').appendChild(div);
+count++;
+        }
         });
     }
 

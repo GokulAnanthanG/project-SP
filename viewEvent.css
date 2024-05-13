@@ -42,6 +42,7 @@ min-height: 100vh;
     font-weight: 400;
     font-style: normal;
     color: gold !important;
+    /* mobile */
     @media only screen and (max-width: 768px) {
         font-size: 15px !important;
     }
@@ -75,7 +76,7 @@ footer .col-lg-4:first-child{
     text-decoration: underline;
   }
   main{
-    min-height: 500px;
+    min-height: 200px;
     padding: 2px;
     color: white;
    }
@@ -83,6 +84,12 @@ footer .col-lg-4:first-child{
     float: left;
     width: 330px;
     height: 330px;
+       /* mobile */
+    @media only screen and (max-width: 768px) {
+      font-size: 15px !important;
+      width: 100%;
+      float:none;
+    }
   }
   .location,.date{
     font-size: 20px;
@@ -105,5 +112,5 @@ footer .col-lg-4:first-child{
     object-fit: cover;
    }
    .contentBox{
-    min-height: 200px;
+    min-height: 50px;
    }

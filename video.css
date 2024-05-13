@@ -87,8 +87,12 @@ footer .col-lg-4:first-child{
     background: linear-gradient(148deg, rgba(13,6,6,1) 0%, rgba(79,15,79,1) 51%, rgba(19,28,92,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d0606",endColorstr="#131c5c",GradientType=1);
     @media only screen and (max-width: 768px) {
-    height: 100px;
+    height: 110px;
   }
+  /* Media query for tablets */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  height: 200px;
+}
 }
  
 .links a{
@@ -116,12 +120,17 @@ footer .col-lg-4:first-child{
      margin-top: 5px;
      
      @media only screen and (max-width: 768px) {
-        max-width: 300px; 
+        max-width: 100%; 
         white-space:wrap;   
         overflow: none;       
         text-overflow: none;    
-        text-align: center;
+        text-align: justify;
     } 
+     /* Media query for tablets */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  max-width: 100%; 
+  text-align: justify;
+}
    }
    .video-container{
     width: 350px;

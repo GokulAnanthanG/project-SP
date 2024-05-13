@@ -35,7 +35,9 @@ min-height: 100vh;
 }
 @media only screen and (max-width: 768px) {
     html, body {width: auto!important; overflow-x: hidden!important} 
-
+}
+@media only screen and (min-width: 1024px) {
+    html, body {width: auto!important; overflow-x: hidden!important} 
 }
 .navbar{
     background-color: transparent !important;
@@ -73,6 +75,18 @@ min-height: 100vh;
     font-size: 18px;
      padding: 10px;
     }
+    /* Media query for tablets */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+     padding: 10px;
+     height:auto;
+ }
+}
+#about-box2{
+    /* Media query for tablets */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    padding: 10px;
+    height:160px !important;
+}
 }
 #about-box2,#about-box3 {
     @media only screen and (max-width: 768px) {
@@ -117,7 +131,7 @@ height: 250px;
 margin: auto;
 object-fit: cover;
 }
- }
+}
  .award{
     margin-top: 20px;
  }
@@ -144,7 +158,15 @@ object-fit: cover;
         margin: auto;
         margin-top: auto !important;
     }
+     /*laptop*/
+@media only screen and (min-width: 1024px) {
+    width: 380px;
+}
+/* Media query for tablets */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    width: 280px;
  }
+}
  .award .img-box h5{
     line-height: 35px;
     font-family: "Philosopher", sans-serif;

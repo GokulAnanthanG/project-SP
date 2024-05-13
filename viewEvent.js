@@ -105,6 +105,7 @@ var PAGE_ACCESS_TOKEN = 'EAAVX5c18p0kBOytEwoGRTwOMCuax4WT6nvPrAnpMsDDEMYvslQZCBG
             data.images.forEach(e=>{
                 let div=document.createElement("div");
                 div.classList.add("col-lg-4");
+                div.classList.add("col-md-6");
                 div.classList.add("mt-2");
                 let img=document.createElement("img");
                 img.src=e;

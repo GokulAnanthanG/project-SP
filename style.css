@@ -168,8 +168,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
 }
 
 .Welcome {
-  margin-top: 40px;
-  color: rgba(255, 255, 255, 0.814);
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.984);
   font-size: 80px;
   line-height: 80px;
   font-family: "Paytone One", sans-serif;
@@ -192,11 +192,14 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
 }
 .name {
   font-size: 50px;
-  font-family: "Passion One", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  color: #dc297a;
+  font-family: "Oswald", sans-serif;  font-weight: 700;
+  font-style: normal;width: 770px;
+  margin: auto;
+  padding: 10px;
+  color: #d61616;
+  background-color: white;
   @media only screen and (max-width: 768px) {
+    width: 300px;
     margin-top: 5px;
     font-size: 30px;
   }
@@ -241,7 +244,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
 .playButtonsvg {
   height: 50px;
   width: 35px;
-  color: #d01368;
+  color: #9f2020;
 }
 .playButtonAni {
   margin-top: 60px;
@@ -255,7 +258,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
 .playButtonAnisvg {
   height: 50px;
   width: 35px;
-  color: #d01368;
+  color: #9f2020;
   animation: changeColor 2000ms ease-out 1000ms alternate infinite;
   cursor: pointer;
 }
@@ -264,7 +267,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
     background-color: white;
   }
   50% {
-    background-color: #d01368;
+    background-color: #9f2020;
   }
   100% {
     background-color: white;
@@ -295,11 +298,11 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
   font-style: normal;
 }
 .sub-heading .colorOne {
-  color: #d01368;
+  color: #9f2020;
   font-family: fantasy;
 }
 .sub-heading .colorTwo {
-  color: #d01368;
+  color: #9f2020;
   font-family: fantasy;
 }
 .Event {
@@ -316,18 +319,29 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
 .Event .card {
   background-color: #15171e;
   color: white;
-  border-right: 5px solid #9f2059;
-  border-bottom: 5px solid #9f2059;
+  border-right: 5px solid #581414c1;
+  border-bottom: 5px solid #581414c1;
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
 }
- 
 .Event .card img {
-  min-width: 250px;
-  min-height: 150px;
-  max-width: 250px;
-  max-height: 150px;
+  min-width: 100%;
+  min-height: 200px;
+  max-width:100%;
+  max-height: 200px;
   object-fit: cover;
+ @media only screen and (min-width: 1024px) { /*laptop*/
+ 
+    min-width: 100% !important;
+    max-width: 100% !important;
+    min-height: 150px !important;
+    max-height: 150px !important;
+}@media only screen and (max-width: 768px) {
+  min-width: 100% !important;
+  max-width: 100% !important;
+  min-height: 200px !important;
+  max-height: 200px !important;
+}
 }
 .Event .card .title {
   font-family: Poppins;
@@ -352,12 +366,12 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
   font-size: 12px;
 }
 .Event .card button {
-  width: 150px;
+  width: 100%;
   height: 40px;
   border: none;
   border-radius: 2px;
   font-family: Poppins;
-  background-color: rgb(7, 29, 101);
+  background-color: #17146b;
   color: rgba(255, 255, 255, 0.866);
 }
 .Event .card button:hover {
@@ -368,8 +382,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
 .video .card {
   background-color: #15171e;
   color: white;
-  border-left: 5px solid rgb(7, 29, 101);
-  border-top: 5px solid rgb(7, 29, 101);
+  border-right: 5px solid #141250;
+  border-bottom: 5px solid #141250;
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
 }
@@ -421,13 +435,13 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#08072b",endCo
   max-height: 300px;
   min-width: 321px;
   max-width: 321px;
-
+  
   @media only screen and (max-width: 768px) {
-    min-width: 290px;
-    max-width: 290px;
+    min-width: 300px;
+    max-width: 300px;
     min-height: 315px;
     max-height: 315px;
-  }
+   }
 }
 .Achivement .title {
   padding: 30px;
@@ -470,26 +484,29 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#08072b",endCo
   background: -moz-linear-gradient(
     148deg,
     rgba(13, 6, 6, 1) 0%,
-    rgba(79, 15, 79, 1) 51%,
+    rgb(79, 15, 33) 51%,
     rgba(19, 28, 92, 1) 100%
   );
   background: -webkit-linear-gradient(
     148deg,
     rgba(13, 6, 6, 1) 0%,
-    rgba(79, 15, 79, 1) 51%,
+    rgb(79, 15, 33) 51%,
     rgba(19, 28, 92, 1) 100%
   );
   background: linear-gradient(
     148deg,
-    rgba(13, 6, 6, 1) 0%,
-    rgba(79, 15, 79, 1) 51%,
-    rgba(19, 28, 92, 1) 100%
+    rgba(13, 6, 6, 0.825) 0%,
+    rgba(79, 15, 33, 0.592) 51%,
+    rgb(11, 12, 59) 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d0606",endColorstr="#131c5c",GradientType=1);
   @media only screen and (max-width: 768px) {
-    flex-direction: column;
-    padding: 20px;
+    /* flex-direction: column; */
+     padding: 20px;
     border-radius: 6px;
+  }
+  @media only screen and (max-width: 768px) {
+    height: 110px;
   }
 }
 .shortBox .box img {
@@ -497,21 +514,34 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#08072b",endCo
   top: -80px;
   height: 250px;
 }
-.shortBox .imgBox {
-  @media only screen and (max-width: 768px) {
-    display: none;
+.shortBox .imgBox img {
+  @media only screen and (max-width: 768px) { /* mobile devices */
+    width: 120px;
+    height: 150px;
+    object-fit: cover;
+    padding: 10px;
+    margin-top: 75px;
   }
 }
 .shortBox h2,
 .shortBox h3 {
   font-family: "Anton", sans-serif;
   color: white;
+  @media only screen and (max-width: 768px) {
+    font-size: 15px;
+  }
 }
 .shortBox p {
   font-family: "Francois One", sans-serif;
+  @media only screen and (max-width: 768px) {
+    font-size: 10px;
+  }
 }
 .shortBox h3 {
   cursor: pointer;
+  @media only screen and (max-width: 768px) {
+    font-size: 25px;
+  }
 }
 
 footer .col-lg-4:first-child {

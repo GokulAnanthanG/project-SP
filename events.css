@@ -33,7 +33,10 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#08072b",endCo
 background-repeat: no-repeat;
 min-height: 100vh;
 }
- 
+   /* Media query for tablets */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    html, body {width: auto!important; overflow-x: hidden!important} 
+}
 .navbar{
     background-color: transparent !important;
 }
@@ -95,6 +98,7 @@ footer .col-lg-4:first-child{
         flex-direction: column;
         width: auto;
     }
+     
    }
     .box{
     width: 450px;
@@ -108,10 +112,30 @@ footer .col-lg-4:first-child{
     @media only screen and (max-width: 768px) {
         width: auto;
     }
+    /*laptop*/
+ @media only screen and (min-width: 1024px) {
+    width: 45%!important;
    }
+   }
+   .box1 img{
+    width: 700px !important;
+     /* Media query for tablets */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    width: 700px !important;
+}
+ 
+}
    .box2{
     border-right: 3px solid white;
     padding: 10px;
+      /* Media query for tablets */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    width: 100% !important;
+}
+ /*laptop*/
+ @media only screen and (min-width: 1024px) {
+    width: 40%!important;
+   }
    }
    .box p{
      font-family: Poppins;

@@ -68,6 +68,7 @@ var PAGE_ACCESS_TOKEN = 'EAAVX5c18p0kBOytEwoGRTwOMCuax4WT6nvPrAnpMsDDEMYvslQZCBG
    function renderPosts(postsWithImages) {
        
        postsWithImages.forEach(function(post,i) {
+        if(post.images[0]!="No images available"){
            var locationHtml = post.location ? `<span>${post.location.city}, ${post.location.country}</span>` : '';
            let div= document.createElement("div");
            div.classList.add("flex")
@@ -80,11 +81,13 @@ let box1=document.createElement("div");
 box1.classList.add("box1");
 box1.classList.add("box");
 
+if(post.images[0]!="No images available"){
 let imgE=document.createElement("img");
 imgE.src=post.images[0];
 imgE.classList.add("img-fluid");
 imgE.classList.add("img-thumbnail");
 box1.appendChild(imgE);
+}
 
 let box2=document.createElement("div");
 box2.classList.add("box2");
@@ -120,7 +123,7 @@ div.appendChild(box2);
 document.getElementById('posts').appendChild(div);
 let hr=document.createElement("hr")
 document.getElementById('posts').appendChild(hr);
-
+        }
         });
     }
 
