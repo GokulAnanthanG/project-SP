@@ -50,26 +50,10 @@
          <br>
         
 <div id="gallery" class="container-fluid">  
-  <img src="./assets/slider/slider1.JPG" class="img-responsive">
-  <img src="./assets/placeholder3.JPG" class="img-responsive">
-  <img src="./assets/slider/slider4.JPG" class="img-responsive">
-  <img src="./assets/slider/slider2.jpg" class="img-responsive">
-  <img src="./assets/placeholder.png" class="img-responsive">
-  <img src="./assets/slider/slider3.jpg" class="img-responsive">
-  <img src="./assets/slider/slider1.JPG" class="img-responsive">
-  <img src="./assets/placeholder3.JPG" class="img-responsive">
-  <img src="./assets/slider/slider4.JPG" class="img-responsive">
-  <img src="./assets/slider/slider2.jpg" class="img-responsive">
-  <img src="./assets/placeholder.png" class="img-responsive">
-  <img src="./assets/slider/slider3.jpg" class="img-responsive">
-  <img src="./assets/slider/slider1.JPG" class="img-responsive">
-  <img src="./assets/placeholder3.JPG" class="img-responsive">
-  <img src="./assets/slider/slider4.JPG" class="img-responsive">
-  <img src="./assets/slider/slider2.jpg" class="img-responsive">
-  <img src="./assets/placeholder.png" class="img-responsive">
-  <img src="./assets/slider/slider3.jpg" class="img-responsive">
+ 
 </div>
-
+<br>
+<p align="center" id="available">scroll down</p>
  
          
        <br>
@@ -101,8 +85,7 @@
             </div>
             <div class="col-lg-4">
               <p>Copyright © 2024 Dr. A. Kaliyamurthy, M.A., Ph.D.. All Rights Reserved.</p>
-              <p>Managed BY: <a href="#"><i>RV</i></a> </p>
-              <p>Designed BY: <a href="#"><i>Gokul</i></a> </p>
+              <p>Powerd &nbsp; by: <a href="#"><i>RVS TechnoMedia</i></a> </p>
             </div>
            </div>
         </footer>
@@ -123,6 +106,61 @@
       AOS.init();
     });
   </script>
-  
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var eventImages = [];
+        function fetchEventImages() {
+          fetch('http://localhost:3000/eventsForClient')
+            .then(response => response.json())
+            .then(data => {
+              eventImages = data;
+              console.log(eventImages);
+              displayImages();
+
+            })
+            .catch(error => {
+              console.error('Failed to fetch event images:', error);
+            });
+        }
+        fetchEventImages();
+
+      function displayImages() {
+        const galleryDiv = document.getElementById('gallery');
+        // Initially display the first 12 images
+        console.log(eventImages);
+        eventImages.slice(0, 12).forEach(imageUrl => {
+          
+          const imgElement = document.createElement('img');
+          imgElement.src ="http://localhost:3000/uploads/events/" + imageUrl.filename;
+          imgElement.className = 'img-responsive';
+          galleryDiv.appendChild(imgElement);
+        });
+
+        // Function to add images one by one on reaching the bottom of the gallery div
+        function addImageOnScroll() {
+          
+          let lastIndex = 12; // Start after the initially displayed images
+          function checkScroll() {
+            const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+            if (scrollTop + clientHeight >= scrollHeight - 10 && lastIndex < eventImages.length) {
+              const imgElement = document.createElement('img');
+              imgElement.src ="http://localhost:3000/uploads/events/" + eventImages[lastIndex].filename;
+              imgElement.className = 'img-responsive';
+              galleryDiv.appendChild(imgElement);
+              lastIndex++;
+              if(lastIndex >= eventImages.length){
+                const availableDiv = document.getElementById('available');
+                availableDiv.innerText = "end";
+              }
+            }
+          }
+          window.addEventListener('scroll', checkScroll);
+        }
+
+        addImageOnScroll();
+      }
+
+      })
+    </script>
     </body>
 </html>

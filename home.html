@@ -1,3 +1,7 @@
+<!--DESIGNED&DEVELOPED BY GOKUL ANANTHAN
+  https://www.instagram.com/gokul_ananthan/?next=%2F
+  POWERED BY RVS TECHNOMEDIA
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,12 +108,38 @@
       <h2 class="sub-heading"><span class="colorOne">R</span>ecent <span class="colorTwo">E</span>vents <i
           class="fas fa-calendar-alt"></i>
       </h2>
-      <br>
+      <br><div class="spinner">
+        <center><div class="spinner-border m-5" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div></center>
+      </div>
+      <!-- #region for div curosel-->
+      <div id="divCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#divCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#divCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#divCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+      
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner" id="EventcuroselForMobile">
+          <!-- dynamic -->
+        </div>
+      
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#divCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#divCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!-- #endregion div curosel-->
       <div class="row" id="posts">
-        <div class="spinner">
-          <center><div class="spinner-border m-5" role="status">
-            <span class="visually-hidden">Loading...</span>
-          </div></center>
+        
         </div>
          <!--dynamic content-->
         <!--row-->
@@ -132,6 +162,36 @@
       <h2 class="sub-heading"><span class="colorOne">V</span>iedos <i class="fas fa-video"></i>
       </h2>
       <br>
+      <div class="spinner2">
+        <center><div class="spinner-border m-5" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div></center>
+      </div>
+       <!-- #region for div curosel-->
+       <div id="divCarousel2" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#divCarousel2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#divCarousel2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#divCarousel2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+      
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner" id="EventcuroselForMobile2">
+          <!-- dynamic -->
+        </div>
+      
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#divCarousel2" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#divCarousel2" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!-- #endregion div curosel-->
       <div class="row" id="videos">
         <!--dynamic-->
         <!--row-->
@@ -157,7 +217,7 @@
           <p>Quick Inspiration: Short Videos to Fuel Your Motivation</p>
         </div>
         <div class="box">
-          <h3><i class="fas fa-film"></i>
+         <a href="shorts.html"> <h3><i class="fas fa-film"></i></a>
           </h3>
         </div>
       </div>
@@ -251,8 +311,7 @@
           </div>
           <div class="col-lg-4">
             <p>Copyright © 2024 Dr. A. Kaliyamurthy, M.A., Ph.D.. All Rights Reserved.</p>
-            <p>Managed BY: <a href="#"><i>RV</i></a> </p>
-            <p>Designed BY: <a href="#"><i>Gokul</i></a> </p>
+            <p>Powerd &nbsp; by: <a href="#"><i>RVS TechnoMedia</i></a> </p>
           </div>
          </div>
       </footer>

@@ -1,19 +1,22 @@
-
 document.addEventListener('DOMContentLoaded', function() {
    //getpost and video
   getPagePosts();
-  displayLatestVideos();
+ displayLatestVideos();
 
   //slider
   // Check if it's not a mobile device
  var imgArray
- if (!(/Mobi|Android/i.test(navigator.userAgent))) {
-   imgArray=["url('./assets/slider/slider1.JPG')","url('./assets/slider/slider2.jpg')","url('./assets/slider/slider3.jpg')","url('./assets/slider/slider4.JPG')"];
+
+ if (/Mobi|Android/i.test(navigator.userAgent)) {
+   imgArray = ["url('./assets/slider/slider1_m.JPG')","url('./assets/slider/slider2_m.JPG')","url('./assets/slider/slider3_m.JPG')","url('./assets/slider/slider4.JPG')"];
+ } else {
+   imgArray = ["url('./assets/slider/slider1.JPG')","url('./assets/slider/slider2.jpg')","url('./assets/slider/slider3.jpg')","url('./assets/slider/slider4.JPG')"];
  }
- else{
-    imgArray=["url('./assets/slider/slider1_m.JPG')","url('./assets/slider/slider2_m.JPG')","url('./assets/slider/slider3_m.JPG')","url('./assets/slider/slider4.JPG')"];
- }
-  const gradient = "linear-gradient(148deg, rgba(8, 7, 43, 0.705) 0%, rgba(10, 12, 41, 0.722) 37%, rgba(54, 7, 15, 0.653) 100%)";
+
+
+ 
+  
+  const gradient = "linear-gradient(148deg, rgba(8, 7, 43, 0.705) 0%, rgba(10, 12, 41, 0.722) 37%,  rgba(100, 73, 77, 0.534) 100%)";
  let imageUrl;
   let backgroundImage = `${gradient}, ${imageUrl}`;
 let count=0;  
@@ -73,6 +76,33 @@ async function displayLatestVideos() {
   
   const videos = await fetchLatestVideos();
   videos.forEach((video,i) => {
+    document.querySelector(".spinner2").style.display="none";
+    //for div video curosel
+    if(i<3){
+      let divC=document.createElement("div");
+      divC.classList.add("carousel-item");
+      divC.classList.add("card");
+if (i === 0) divC.classList.add("active");
+    const videoElementC = document.createElement('iframe');
+    videoElementC.width = '100%';
+    videoElementC.height = '200px';
+    videoElementC.src = `https://www.youtube.com/embed/${video.id.videoId}`;
+    videoElementC.frameBorder = '0';
+    videoElementC.allowFullscreen = true;
+     divC.appendChild(videoElementC);
+
+     let textBoxC=document.createElement("div");
+      textBoxC.classList.add("textBox");
+
+      let pC=document.createElement("p");
+      pC.setAttribute("align","justify");
+      pC.classList.add("videoText");
+      pC.classList.add("my-1");
+      pC.innerText=video.snippet.title;
+      textBoxC.appendChild(pC);
+      divC.appendChild(textBoxC);
+      document.getElementById("EventcuroselForMobile2").appendChild(divC)
+    }
     //
 let div=document.createElement("div");
 if(i==0){
@@ -119,12 +149,11 @@ div.setAttribute("data-aos-delay",1600)
    //
       const videoElement = document.createElement('iframe');
       videoElement.width = '100%';
-      videoElement.height = '215';
+      videoElement.height = '200px';
       videoElement.src = `https://www.youtube.com/embed/${video.id.videoId}`;
       videoElement.frameBorder = '0';
       videoElement.allowFullscreen = true;
-      console.log(video.snippet.title); // Log the video title
-      innerDiv.appendChild(videoElement);
+       innerDiv.appendChild(videoElement);
       //
       let textBox=document.createElement("div");
       textBox.classList.add("textBox");
@@ -138,6 +167,7 @@ div.setAttribute("data-aos-delay",1600)
       //
       innerDiv.appendChild(p)
       div.appendChild(innerDiv);
+     
       videosContainer.appendChild(div);
   });
   //fb posts
@@ -161,7 +191,7 @@ var PAGE_ACCESS_TOKEN = 'EAAVX5c18p0kBOytEwoGRTwOMCuax4WT6nvPrAnpMsDDEMYvslQZCBG
                    var options = { weekday: 'short', month: 'short', year: 'numeric' };
                    var createdTime = new Date(post.created_time).toLocaleDateString('en-US', options);
                    var location = post.place ? post.place.location : null;
-                   var locationHtml = '';
+                   let locationHtml = '';
                    if (location) {
                        locationHtml = `<p>Location: ${location.city}, ${location.country}</p>`;
                    }
@@ -208,7 +238,42 @@ var PAGE_ACCESS_TOKEN = 'EAAVX5c18p0kBOytEwoGRTwOMCuax4WT6nvPrAnpMsDDEMYvslQZCBG
       
        postsWithImages.forEach(function(post,i) {
         if(post.images[0]!="No images available"){
-           var locationHtml = post.location ? `<span>${post.location.city}, ${post.location.country}</span>` : '';
+
+          var locationHtml = post.location ? `<span>${post.location.city}, ${post.location.country}</span>` : '';
+
+//
+if(count<3){
+  let carouselItem = document.createElement("div");
+carouselItem.className = "carousel-item";
+if (count === 0) carouselItem.classList.add("active");
+
+let contentDiv = document.createElement("div");
+contentDiv.className = "d-block w-100 custom-content card p-3";
+
+let img2 = document.createElement("img");
+img2.src = post.images[0];
+img2.className = "img-fluid img-thumbnail";
+img2.alt = "Post Image";
+
+let textBox2 = document.createElement("div");
+textBox2.className = "textBox p-3";
+
+ textBox2.innerHTML=`<h5 style='font-size:14px' class="title my-1" align="center">${post.message}</h5>
+ <p align="center" class="my-1"><span class="date">${post.createdTime}</span> |
+   <span class="location"> <i class='fas fa-map-marker-alt'></i> ${locationHtml?`<span>${locationHtml}<span>`:"not mentioned"} </span>
+ </p><br><a href='viewEvent.html?index=${i}'><button>Details</button></center>`;
+
+contentDiv.appendChild(img2);
+contentDiv.appendChild(textBox2);
+
+carouselItem.appendChild(contentDiv);
+console.log(carouselItem);
+document.querySelector("#EventcuroselForMobile").appendChild(carouselItem);
+
+}
+//
+
+
 let div= document.createElement("div");
 div.classList.add("col-lg-3");
 div.classList.add("col-md-6");
@@ -268,5 +333,6 @@ document.getElementById('posts').appendChild(div);
 count++;
         }
         });
+ 
     }
 

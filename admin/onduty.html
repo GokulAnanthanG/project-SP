@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kaliyamurthy Admin</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="home.html">kaliyamurthy Admin</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <a class="nav-link " href="home.html">Add Event Photos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="onduty.html">Add OnDuty Photos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<main>
+    <div class="container card mt-lg-4 p-3">
+        <h1>Onduty (Add Photos for the photos page)</h1>
+        <br>
+    <form   method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="imageUpload" class="form-label">Select Images to Upload:</label>
+            <input type="file" class="form-control" id="imageUpload" name="images" accept="image/*" multiple onchange="previewImages();">
+        </div>
+        <div id="imagePreviewContainer" class="mb-3 d-flex flex-wrap">
+            <!-- Preview images will be appended here by the previewImages function -->
+        </div>
+        <button type="button" class="btn btn-primary">Upload Images</button>
+    </form>
+    <center>
+    <div style="display: none;"  class="spinner-border text-primary" id="spinner" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    </center>
+    <br>
+    <hr>
+    <br>
+    <div id="onduty"></div>
+    <footer>
+        <footer class="footer mt-auto py-3 bg-light fixed-bottom">
+            <div class="container">
+                <p class="text-center">&copy; 2024 kaliyamurthy.com Powerd by RVS TechnoMedia</p>
+            </div>
+        </footer>
+    </footer>
+    <script> 
+
+async function sendTokenToValidateRoute() {
+        const spTok = localStorage.getItem('spTok');
+        if (spTok) {
+            try {
+                const response = await fetch('http://localhost:3000/validate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ spTok })
+                });
+                const data = await response.json();
+                if(!data.valid){
+                    location.href="index.html";
+                }
+            } catch (error) {
+                console.error('Error sending token for validation:', error);
+                location.href="index.html";
+            }
+        } else {
+            console.log('No token found in localStorage');
+            location.href="index.html";
+        }
+    }
+
+    sendTokenToValidateRoute();
+                var submitButton = document.querySelector('.btn');
+
+        function previewImages() {
+            var preview = document.querySelector('#imagePreviewContainer');
+            preview.innerHTML = '';
+            var files = document.getElementById('imageUpload').files;  
+            var allValid = true;
+
+            if (files) {
+                [].forEach.call(files, function(file) {
+                    if (!file.type.startsWith('image/')) {
+                        allValid = false;
+                        alert(file.name + " is not an image file.");
+                    } else if (!/\.(jpe?g|png|gif)$/i.test(file.name)) {
+                        allValid = false;
+                        alert(file.name + " is not a valid image type.");
+                    } else {
+                        readAndPreview(file);
+                    }
+                });
+            }
+         
+            submitButton.disabled = !allValid; // Disable submit button if any file is invalid
+            function readAndPreview(file) {
+                var reader = new FileReader();
+
+                reader.addEventListener("load", function() {
+                    var image = new Image();
+                    image.height = 100; // set image height
+                    image.title  = file.name;
+                    image.src    = this.result;
+                    image.classList.add("m-2"); // add margin
+                    image.onclick = function() {
+                        this.parentNode.removeChild(this);
+                        // Reflect the removal in the input field
+                        updateFileInput(file);
+                    }; // remove image on click
+                    preview.appendChild(image);
+                });
+
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function updateFileInput(fileToRemove) {
+            var allFiles = Array.from(document.getElementById('imageUpload').files);
+            var filteredFiles = allFiles.filter(function(file) {
+                return file.name !== fileToRemove.name;
+            });
+            var dataTransfer = new DataTransfer();
+            filteredFiles.forEach(function(file) {
+                dataTransfer.items.add(file);
+            });
+            document.getElementById('imageUpload').files = dataTransfer.files;
+            // Re-check if all remaining files are valid to possibly re-enable the submit button
+            previewImages();
+        }
+        function postImages(url) {
+            var files = document.getElementById('imageUpload').files; 
+            var formData = new FormData();
+            for (var i = 0; i < files.length; i++) {
+                formData.append('images', files[i], files[i].name);
+            }
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", url, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    alert("Images uploaded successfully!");
+                    document.getElementById("spinner").style.display="none";
+                } else if (xhr.readyState === 4) {
+                    alert("Failed to upload images. Status: " + xhr.status);
+                    document.getElementById("spinner").style.display="none";
+                }
+            };
+            xhr.send(formData);
+        }
+        submitButton.addEventListener('click', function() {
+            if(document.getElementById('imageUpload').files.length==0){
+                alert("Please select images to upload");
+                return;
+            }else{
+            document.getElementById("spinner").style.display="block";
+            postImages('http://localhost:3000/upload-onduty');
+            }
+        });
+
+     
+     
+        function fetchOnduty() {
+        fetch('http://localhost:3000/onduty')
+            .then(response => response.json())
+            .then(data => {
+                const eventContainer = document.getElementById('onduty');
+                eventContainer.innerHTML = '';  
+                data.forEach(event => {
+                    const imageElement = document.createElement('img');
+                    imageElement.src = `http://localhost:3000/uploads/onduty/${event.filename}`;
+                    imageElement.style.width = '100px';
+                    imageElement.style.height = '100px';
+                    imageElement.style.marginRight = '10px';
+                    const deleteButton = document.createElement('button');
+                    deleteButton.innerText = 'Delete';
+                    deleteButton.classList.add("btn");
+                    deleteButton.classList.add("btn-danger");
+                    deleteButton.onclick = function() {
+                        deleteOnduty(event.id);
+                    };
+
+                    const container = document.createElement('div');
+                    container.className = 'd-flex align-items-center justify-content-between mb-3';
+                    container.appendChild(imageElement);
+                    container.appendChild(deleteButton);
+                    eventContainer.appendChild(container);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching events:', error);
+                alert("Failed to fetch events");
+            });
+    }
+
+    function deleteOnduty(eventId) {
+        fetch(`http://localhost:3000/onduty/${eventId}`, {
+            method: 'DELETE'
+        })
+        .then(response => {
+            if (response.ok) {
+                fetchOnduty();  
+            } else {
+                alert('Failed to delete onduty');
+            }
+        })
+        .catch(error => {
+            console.error('Error deleting onduty:', error);
+            alert("Failed to delete onduty");
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchOnduty);  
+    function logout(){
+        localStorage.removeItem('spTok');
+        location.href="index.html";
+    }
+</script>
+    </div>
+</main>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script></body>
+</html>
+

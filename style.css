@@ -141,6 +141,13 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
    overflow-y: hidden !important;
   transition: background-image 0.5s ease;
   @media only screen and (max-width: 768px) {
+    background-image: linear-gradient(
+      148deg,
+      rgba(8, 7, 43, 0.589) 0%,
+      rgba(10, 12, 41, 0.492) 37%,
+      rgba(100, 73, 77, 0.534) 100%
+    ),
+    url("./assets/placeholder3.JPG");
     padding: 4px;
    }
 }
@@ -166,7 +173,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
   font-style: normal;
   color: rgba(255, 255, 255, 0.929) !important;
 }
-
+ 
 .Welcome {
   margin-top: 10px;
   color: rgba(255, 255, 255, 0.984);
@@ -198,8 +205,10 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
   padding: 10px;
   color: #d61616;
   background-color: white;
+  border-radius: 2px;
   @media only screen and (max-width: 768px) {
-    width: 300px;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 340px;
     margin-top: 5px;
     font-size: 30px;
   }
@@ -305,6 +314,21 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
   color: #9f2020;
   font-family: fantasy;
 }
+#divCarousel{ 
+  display: none;
+   @media only screen and (max-width: 768px) {
+    display: block;
+  }
+}
+#eventCarousel img{
+  height: 300px !important;
+  width: 300px !important;
+}
+#posts{
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+}
 .Event {
   @media only screen and (max-width: 768px) {
     padding: 10px;
@@ -319,8 +343,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
 .Event .card {
   background-color: #15171e;
   color: white;
-  border-right: 5px solid #581414c1;
-  border-bottom: 5px solid #581414c1;
+  border-top: 5px solid #581414c1;
+  border-left: 5px solid #581414c1;
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
 }
@@ -378,12 +402,23 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
   background-color: rgba(255, 255, 255, 0.866);
   color: black;
 }
-
-.video .card {
+#divCarousel2{
+  display: none;
+  @media only screen and (max-width: 768px) {
+  display: block;
+  }
+}
+#videos{
+  @media only screen and (max-width: 768px) {
+    display: none;
+    }
+}
+ 
+#EventcuroselForMobile2 .card,.video .card {
   background-color: #15171e;
   color: white;
-  border-right: 5px solid #141250;
-  border-bottom: 5px solid #141250;
+  border-right: 5px solid #581414c1;
+  border-bottom: 5px solid #581414c1;
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
 }
@@ -483,15 +518,15 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#08072b",endCo
   background: rgb(13, 6, 6);
   background: -moz-linear-gradient(
     148deg,
-    rgba(13, 6, 6, 1) 0%,
-    rgb(79, 15, 33) 51%,
-    rgba(19, 28, 92, 1) 100%
+    rgba(13, 6, 6, 0.825) 0%,
+    rgba(79, 15, 33, 0.592) 51%,
+    rgb(11, 12, 59) 100%
   );
   background: -webkit-linear-gradient(
     148deg,
-    rgba(13, 6, 6, 1) 0%,
-    rgb(79, 15, 33) 51%,
-    rgba(19, 28, 92, 1) 100%
+    rgba(13, 6, 6, 0.825) 0%,
+    rgba(79, 15, 33, 0.592) 51%,
+    rgb(11, 12, 59) 100%
   );
   background: linear-gradient(
     148deg,
@@ -514,9 +549,14 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#08072b",endCo
   top: -80px;
   height: 250px;
 }
+.shortBox .imgBox {
+  @media only screen and (max-width: 768px) { /* mobile devices */
+    width: 100px;
+  }
+}
 .shortBox .imgBox img {
   @media only screen and (max-width: 768px) { /* mobile devices */
-    width: 120px;
+    width: 100px;
     height: 150px;
     object-fit: cover;
     padding: 10px;
@@ -530,6 +570,9 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#08072b",endCo
   @media only screen and (max-width: 768px) {
     font-size: 15px;
   }
+}
+.shortBox a{
+  color: white;
 }
 .shortBox p {
   font-family: "Francois One", sans-serif;

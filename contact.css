@@ -85,32 +85,47 @@ footer .col-lg-4:first-child{
     background: -webkit-linear-gradient(148deg, rgba(13,6,6,1) 0%, rgba(79,15,79,1) 51%, rgba(19,28,92,1) 100%);
     background: linear-gradient(148deg, rgba(13,6,6,1) 0%, rgba(79,15,79,1) 51%, rgba(19,28,92,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d0606",endColorstr="#131c5c",GradientType=1);
-    @media only screen and (max-width: 768px) {
-         flex-direction: column;
-         padding: 20px;
-         border-radius: 6px;
-    }
-
+ 
+         @media only screen and (max-width: 768px) {
+          padding: 10px;
+          height: 110px;
+          margin-top: 10px;
+        }
+ 
 }  
   .shortBox .box img{
     position: relative;
     top: -80px;
     height: 250px;
   }
-  .shortBox .imgBox{
+  .shortBox .imgBox img{
     @media only screen and (max-width: 768px) {
-        display: none;
+      width: 120px;
+      height: 150px;
+      object-fit: cover;
+      padding: 10px;
+      margin-top: 75px;
     }
   }
   .shortBox h2, .shortBox h3{
     font-family: "Anton", sans-serif;
     color: white;
-  }
-  .shortBox p{
-    font-family: "Francois One", sans-serif;
+    @media only screen and (max-width: 768px) {
+      font-size: 15px;
+    }
   }
   .shortBox p{
     color:rgba(255, 255, 255, 0.748);
+    font-family: "Francois One", sans-serif;
+    @media only screen and (max-width: 768px) {
+      font-size: 10px;
+    }
+  }
+  .shortBox h3 {
+    cursor: pointer;
+    @media only screen and (max-width: 768px) {
+      font-size: 25px;
+    }
   }
   .conatctOptions{
     width: 600px;
@@ -123,6 +138,14 @@ footer .col-lg-4:first-child{
   .conatctOptions .icons i{
     font-size: 30px;
     color: rgb(103, 68, 99);
+    @media only screen and (max-width: 768px) {
+      font-size: 27px;
+    }
+  }
+  .details{
+    @media only screen and (max-width: 768px) {
+      font-size: 15px;
+    }
   }
  .sendMsg{
     color: rgb(88, 29, 104);
@@ -135,4 +158,8 @@ footer .col-lg-4:first-child{
   }
   .form-control{
     background-color:rgba(255, 255, 255, 0.868)!important;
+  }
+
+  #spinner{
+    display: none;
   }
