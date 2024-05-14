@@ -7,8 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Check if it's not a mobile device
  var imgArray
 
+
  if (/Mobi|Android/i.test(navigator.userAgent)) {
-   imgArray = ["url('./assets/slider/slider1_m.JPG')","url('./assets/slider/slider2_m.JPG')","url('./assets/slider/slider3_m.JPG')","url('./assets/slider/slider4.JPG')"];
+   imgArray = ["url('./assets/slider/slider1_m.jpg')","url('./assets/slider/slider2_m.jpg')","url('./assets/slider/slider3_m.jpg')","url('./assets/slider/slider4.JPG')"];
  } else {
    imgArray = ["url('./assets/slider/slider1.JPG')","url('./assets/slider/slider2.jpg')","url('./assets/slider/slider3.jpg')","url('./assets/slider/slider4.JPG')"];
  }
@@ -16,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
  
   
-  const gradient = "linear-gradient(148deg, rgba(8, 7, 43, 0.705) 0%, rgba(10, 12, 41, 0.722) 37%,  rgba(100, 73, 77, 0.534) 100%)";
+  const gradient = "linear-gradient(148deg, rgba(8, 7, 43, 0.705) 0%, rgba(10, 12, 41, 0.722) 37%,  rgba(91, 16, 42, 0.534) 100%)";
  let imageUrl;
   let backgroundImage = `${gradient}, ${imageUrl}`;
 let count=0;  

@@ -145,7 +145,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
       148deg,
       rgba(8, 7, 43, 0.589) 0%,
       rgba(10, 12, 41, 0.492) 37%,
-      rgba(100, 73, 77, 0.534) 100%
+      rgba(91, 16, 42, 0.534) 100%
     ),
     url("./assets/placeholder3.JPG");
     padding: 4px;
@@ -208,7 +208,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
   border-radius: 2px;
   @media only screen and (max-width: 768px) {
     background-color: rgba(255, 255, 255, 0.7);
-    width: 340px;
+    width: 330px;
     margin-top: 5px;
     font-size: 30px;
   }
@@ -221,7 +221,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: #efd8e2;
+  color: #fcf9fb;
   @media only screen and (max-width: 768px) {
     text-align: justify;
     word-spacing: -3.5px;
@@ -501,6 +501,9 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#08072b",endCo
   font-style: normal;
   margin-top: 5px;
 }
+.Achivement a{
+  text-decoration: none;
+}
 .Achivement p {
   font-size: 15px;
   font-family: Poppins;
@@ -544,6 +547,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#08072b",endCo
     height: 110px;
   }
 }
+
 .shortBox .box img {
   position: relative;
   top: -80px;
@@ -561,6 +565,11 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#08072b",endCo
     object-fit: cover;
     padding: 10px;
     margin-top: 75px;
+  }
+  .shortBox .content{
+    @media only screen and (max-width: 768px) { /* mobile devices */
+      width: 100px;
+    }
   }
 }
 .shortBox h2,
