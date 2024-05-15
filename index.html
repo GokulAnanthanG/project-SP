@@ -6,16 +6,25 @@
     <title>Our SP in Diary</title>
     <link rel="stylesheet" href="index.css">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 </head>
 <body>
-    <div class="box">
-       <center> <img src="./assets/cover-removebg-preview (1).png" alt=""></center>
-        <h2 align="center">A Cop's Guidance To Succcess</h2>
-    </div>
-</body>
+  <div class="wrapper">
+    <div class="box" data-aos="fade-out" data-aos-duration="1000" data-aos-once="true" data-aos-delay="1000">
+        <center> <img src="./assets/cover-removebg-preview (1).png" alt=""></center>
+         <h2 align="center">A Cop's Guidance To Succcess</h2>
+         <h2 align="center"><span class="loading">Loading</span><span class="loading-dots"><span>.</span><span>.</span><span>.</span></span></h2>
+     </div>
+ </div>
+ </body>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
 <script>
-    setTimeout(()=>{
+      document.addEventListener('DOMContentLoaded', function () {
+      AOS.init();
+    });
+     setTimeout(()=>{
         location.href="home.html"
-    },3000)
+     },3000)
 </script>
 </html>

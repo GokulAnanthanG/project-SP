@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
  
   
-  const gradient = "linear-gradient(148deg, rgba(8, 7, 43, 0.705) 0%, rgba(10, 12, 41, 0.722) 37%,  rgba(91, 16, 42, 0.534) 100%)";
+  const gradient = "linear-gradient(148deg, rgba(8, 7, 43, 0.589) 0%,rgba(10, 12, 41, 0.529) 37%,rgba(54, 7, 15, 0.573) 100%)";
  let imageUrl;
   let backgroundImage = `${gradient}, ${imageUrl}`;
 let count=0;  
