@@ -1,34 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
    //getpost and video
   getPagePosts();
- displayLatestVideos();
+ //displayLatestVideos();
 
   //slider
   // Check if it's not a mobile device
- var imgArray
-
-
- if (/Mobi|Android/i.test(navigator.userAgent)) {
-   imgArray = ["url('./assets/slider/slider1_m.jpg')","url('./assets/slider/slider2_m.jpg')","url('./assets/slider/slider3_m.jpg')","url('./assets/slider/slider4.JPG')"];
- } else {
-   imgArray = ["url('./assets/slider/slider1.JPG')","url('./assets/slider/slider2.jpg')","url('./assets/slider/slider3.jpg')","url('./assets/slider/slider4.JPG')"];
- }
-
-
- 
   
-  const gradient = "linear-gradient(148deg, rgba(8, 7, 43, 0.589) 0%,rgba(10, 12, 41, 0.529) 37%,rgba(54, 7, 15, 0.573) 100%)";
- let imageUrl;
-  let backgroundImage = `${gradient}, ${imageUrl}`;
-let count=0;  
-setInterval(()=>{
-  if(count>=imgArray.length)count=0;
-  imageUrl=imgArray[count];
- backgroundImage = `${gradient}, ${imageUrl}`;
-
-    document.querySelector(".wrapper").style.backgroundImage = backgroundImage;
-    count++;
-  },5000)
 
   //slider
     var audioBtn=document.querySelector(".playButton");

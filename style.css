@@ -102,54 +102,106 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
   }
 
 }
-.wrapper {
-  /* background: rgb(159,15,42);
-    background: linear-gradient(148deg, rgb(136, 13, 36) 9%, rgb(6, 20, 71) 76%, rgb(7, 29, 101) 92%); */
-  background: rgb(8, 7, 43);
-  background: -moz-linear-gradient(
-    148deg,
-    rgba(8, 7, 43, 1) 0%,
-    rgba(10, 12, 41, 1) 37%,
-    rgba(54, 7, 15, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    148deg,
-    rgba(8, 7, 43, 1) 0%,
-    rgba(10, 12, 41, 1) 37%,
-    rgba(54, 7, 15, 1) 100%
-  );
-  background: linear-gradient(
-    148deg,
-    rgba(8, 7, 43, 1) 0%,
-    rgba(10, 12, 41, 1) 37%,
-    rgba(54, 7, 15, 1) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#08072b",endColorstr="#36070f",GradientType=1);
-   background-repeat: no-repeat;
-  border-bottom-right-radius: 35px;
-  background-image: linear-gradient(
-      148deg,
-      rgba(8, 7, 43, 0.589) 0%,
-      rgba(10, 12, 41, 0.529) 37%,
-      rgba(54, 7, 15, 0.534) 100%
-    ),
-    url("./assets/placeholder3.JPG");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-    overflow-y: hidden !important;
-  transition: background-image 0.5s ease;
-  @media only screen and (max-width: 768px) {
-    background-image: linear-gradient(
-      148deg,
-      rgba(8, 7, 43, 0.415) 0%,
-      rgba(10, 12, 41, 0.33) 37%,
-      rgba(91, 16, 42, 0.399) 100%
-    ),
-    url("./assets/placeholder3.JPG");
-    padding: 4px;
-   }
+#banner-carousel-item1 img,#banner-carousel-item2 img,#banner-carousel-item3 img{
+min-height: 650px;
+max-height: 650px;
+object-fit: cover;
+
+/* Mobile devices (portrait) */
+@media only screen and (max-width: 768px) {
+  min-height: 350px;
+max-height: 350px;
 }
+ }
+  
+   
+  
+ 
+ #banner-carousel-item1 .textBox,#banner-carousel-item2 .textBox,#banner-carousel-item3 .textBox{
+   min-height: 650px;
+  max-height: 650px;
+  position: absolute;
+    background-color: #1a17178c;
+}
+#banner-carousel-item1 .textBox{
+  padding-top: 170px;
+  @media only screen and (max-width: 768px) {
+    padding-top: 60px;
+  }
+  @media only screen and (min-width: 601px) and (max-width: 768px) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    padding-top: 190px;
+  }
+}
+#banner-carousel-item2 .textBox{
+  padding-top: 230px;
+  @media only screen and (max-width: 768px) {
+    padding-top: 150px;
+  }
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    padding-top: 290px;
+  }
+}
+#banner-carousel-item3 .textBox{
+  padding-top: 220px;
+  @media only screen and (max-width: 768px) {
+    padding-top: 155px;
+  }
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    padding-top: 290px;
+  }
+}
+#banner-carousel-item1 .textBox h1{
+  color: rgb(255, 255, 255);
+  @media only screen and (max-width: 768px) {
+   font-size: 20px;
+   }
+  @media only screen and (min-width: 601px) and (max-width: 768px) {
+    font-size: 34px;
+    line-height: 30px;
+  }
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    font-size: 64px;
+    line-height: 55px;
+    margin-bottom: 10px;
+}
+}
+#banner-carousel-item2 .textBox h1{
+  color: rgba(255, 255, 255, 0.847);
+  @media only screen and (max-width: 768px) {
+   font-size: 20px;
+   line-height: 24px;
+    padding: 5px;
+  }
+  @media only screen and (min-width: 601px) and (max-width: 768px) {
+    font-size:35px ;
+    line-height: 28px;
+  }
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    font-size: 55px;
+    line-height: 50px;
+  }
+}
+#banner-carousel-item3 .textBox h1{
+  color: rgba(255, 255, 255, 0.847);
+  @media only screen and (max-width: 768px) {
+   font-size: 20px;
+   line-height: 24px;
+     padding: 5px;
+   }
+   @media only screen and (min-width: 601px) and (max-width: 768px) {
+    font-size:35px ;
+    line-height: 28px;
+  }
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    font-size: 55px;
+      line-height: 60px;
+  }
+}
+ 
 .navbar {
   background-color: transparent !important;
 }
@@ -185,8 +237,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
   @media only screen and (max-width: 768px) {
     color: white;
     margin-top: 0px;
-    font-size:34px;
-    line-height: 50px;
+     line-height: 20px;
     text-align: center;
       }
 }
@@ -199,18 +250,11 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
 .name {
   font-size: 50px;
   font-family: "Oswald", sans-serif;  font-weight: 700;
-  font-style: normal;width: 770px;
+  font-style: normal; 
   margin: auto;
   padding: 10px;
   color: #d61616;
-  background-color: white;
-  border-radius: 2px;
-  @media only screen and (max-width: 768px) {
-    background-color: rgba(255, 255, 255, 0.7);
-    width: 330px;
-    margin-top: 5px;
-    font-size: 30px;
-  }
+   
 }
 .about {
   width: 900px;
@@ -222,14 +266,21 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
   font-style: normal;
   color: #fcf9fb;
   @media only screen and (max-width: 768px) {
+    font-size: 12px;
+    padding: 11px;
     text-align: justify;
     word-spacing: -3.5px;
+    line-height: 18px;
     width: auto;
     margin: none;
   }
+  @media only screen and (min-width: 601px) and (max-width: 768px) {
+    font-size: 15.5px;
+    padding: 15px;
+  }
 }
 .quotes {
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 900;
   font-family: fantasy;
 }
@@ -242,30 +293,29 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
   float: right;
 }
 .playButton {
-  margin-top: 60px;
-  width: 50px;
-  height: 50px;
+  
+  width: 40px;
+  height: 40px;
   background-color: white;
   border-radius: 100%;
   cursor: pointer;
 }
 .playButtonsvg {
-  height: 50px;
-  width: 35px;
+  height: 40px;
+  width: 25px;
   color: #9f2020;
 }
 .playButtonAni {
-  margin-top: 60px;
-  width: 50px;
-  height: 50px;
+   width: 40px;
+  height: 40px;
   background-color: white;
   border-radius: 100%;
   animation: changeColor1 2000ms ease-out 1000ms alternate infinite;
   cursor: pointer;
 }
 .playButtonAnisvg {
-  height: 50px;
-  width: 35px;
+  height: 40px;
+  width: 25px;
   color: #9f2020;
   animation: changeColor 2000ms ease-out 1000ms alternate infinite;
   cursor: pointer;
@@ -315,8 +365,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
 }
 #divCarousel{ 
   display: none;
-   @media only screen and (max-width: 768px) {
-    display: block;
+  @media only screen and (max-width: 600px) {
+        display: block;
   }
 }
 #eventCarousel img{
@@ -324,8 +374,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
   width: 300px !important;
 }
 #posts{
-  @media only screen and (max-width: 768px) {
-    display: none;
+  @media only screen and (max-width: 600px) {
+        display: none;
   }
 }
 .Event {
@@ -403,12 +453,12 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0a4b",endCo
 }
 #divCarousel2{
   display: none;
-  @media only screen and (max-width: 768px) {
-  display: block;
+  @media only screen and (max-width: 600px) {
+    display: block;
   }
 }
 #videos{
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 600px) {
     display: none;
     }
 }
@@ -567,7 +617,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#08072b",endCo
   }
   .shortBox .content{
     @media only screen and (max-width: 768px) { /* mobile devices */
-      width: 100px;
+      width: 0px;
     }
   }
 }
