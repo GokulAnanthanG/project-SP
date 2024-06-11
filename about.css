@@ -61,6 +61,49 @@ min-height: 100vh;
   font-style: normal;
   color: rgba(255, 255, 255, 0.929) !important;
 }
+/*floating button*/
+.floating-download {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 20;
+}
+
+.download-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.options {
+    display: none;
+    position: absolute;
+    bottom: 40px;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.options a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.options a:hover {
+    background-color: #f0f0f0;
+}
+
+.options.show {
+    display: block;
+}
 
 .about-box{
     width: 100%;

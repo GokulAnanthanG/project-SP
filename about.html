@@ -51,7 +51,22 @@
             <br>
             <h5 align="center">Let's Explore the Essence of Our SP</h5>
           </div>
+<!-- #region -->
+<div class="floating-download">
+  <button class="download-btn" onclick="toggleOptions()">About SP <i class="fas fa-download"></i></button>
+  <div id="options" class="options">
+      <a href="./assets/SP Kaliyamurthy biodata English.pdf" download>English</a>
+      <a href="./assets/SP Kaliyamurthy biodata Tamil.pdf" download>தமிழ்</a>
+  </div>
+</div>
 
+<script>
+  function toggleOptions() {
+      var options = document.getElementById("options");
+      options.classList.toggle("show");
+  }
+</script>
+<!-- #endregion -->
           <div class="row  mt-lg-3 about-column">
             <div class="col-lg-6">
               <p align="justify" data-aos="fade-left" data-aos-duration="1700" data-aos-once="true"
