@@ -1,5 +1,5 @@
 const API_KEY = 'AIzaSyBOCxECc8aX3GvqFvxGOxtJ-UWA1X6eHlo';
-const CHANNEL_ID = 'UCsn_aZqbyOfH9PZOfUmFPZQ';
+const CHANNEL_ID = 'UCOSOQHBMBEbwCjCVvnNR8TQ';
 async function fetchLatestVideos() {
   const response = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=30`);
   const data = await response.json();

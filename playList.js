@@ -1,23 +1,18 @@
-// Replace 'YOUR_API_KEY' with your actual YouTube Data API key
-const API_KEY = 'AIzaSyBOCxECc8aX3GvqFvxGOxtJ-UWA1X6eHlo';
-// Replace 'YOUR_CHANNEL_ID' with your YouTube channel ID
-const CHANNEL_ID = 'UCsn_aZqbyOfH9PZOfUmFPZQ';
+ const API_KEY = 'AIzaSyBOCxECc8aX3GvqFvxGOxtJ-UWA1X6eHlo';
+ const CHANNEL_ID = 'UCOSOQHBMBEbwCjCVvnNR8TQ';
 
-// Function to fetch the latest playlists from the specified channel
-async function fetchLatestPlaylists() {
+ async function fetchLatestPlaylists() {
     const response = await fetch(`https://www.googleapis.com/youtube/v3/playlists?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet&maxResults=5`);
     const data = await response.json();
     return data.items;
     console.log(data.items);
 }
 
-// Function to display the latest playlists on the webpage
-async function displayLatestPlaylists() {
+ async function displayLatestPlaylists() {
     const playlistsContainer = document.getElementById('playlists');
     const playlists = await fetchLatestPlaylists();
     playlists.forEach(playlist => {
-        // Fetch the number of videos in the playlist
-        fetchPlaylistVideosCount(playlist.id).then(videoCount => {
+         fetchPlaylistVideosCount(playlist.id).then(videoCount => {
             const playlistElement = document.createElement('div');
             playlistElement.classList.add("col-lg-4")
             playlistElement.innerHTML = `

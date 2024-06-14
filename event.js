@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-var PAGE_ACCESS_TOKEN = 'EAAVX5c18p0kBOytEwoGRTwOMCuax4WT6nvPrAnpMsDDEMYvslQZCBGKUGzv9Ac6dSdENut3gMwckj11cjbqf9ZBJHaofY0BjhCZAjngeaUq4rzZCKsgx80hjqvgkZCxbM3CJp2D2Rh5JjAUDkMNUXZB9coTq5kuzg9qPQoAWJxZA7syh4nZCZAdFhNmPtZCajikTIZD';
+var PAGE_ACCESS_TOKEN = 'EAAUnabhov8sBO92ZBKv3ZCjwEfjMWjFDl04ZCqcsppdR6WFK6T1xvtoEZBzik3PIkCsoY0cmt4yq5QPoWpqOJ5ZBZAGZCLYIpSXQ92DKqQAcT3e6wxmz62sIA03c2QkZCnSDV9nnZB7xKYajQDWJol8cgc3b4i7fAd1cgGkBE4znecZBkBFakI1lPOxenxWSjk74ulbZArEg5Yt4afLA8MMOZBjaHChL8LiE93nx4UAgYP4g';
 
-    var PAGE_ID = '140032333456457';
+    var PAGE_ID = '1636695656591485';
    
    function getPagePosts() {
          fetch(`https://graph.facebook.com/v12.0/${PAGE_ID}/posts?fields=message,full_picture,created_time,place,attachments&access_token=${PAGE_ACCESS_TOKEN}`)
